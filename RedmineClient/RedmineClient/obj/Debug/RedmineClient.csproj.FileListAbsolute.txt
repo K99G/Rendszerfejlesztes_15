@@ -1,0 +1,11 @@
+C:\Users\Gergely\source\repos\Redmine\RedmineClient\RedmineClient\bin\Debug\RedmineClient.exe.config
+C:\Users\Gergely\source\repos\Redmine\RedmineClient\RedmineClient\bin\Debug\RedmineClient.exe
+C:\Users\Gergely\source\repos\Redmine\RedmineClient\RedmineClient\bin\Debug\RedmineClient.pdb
+C:\Users\Gergely\source\repos\Redmine\RedmineClient\RedmineClient\obj\Debug\RedmineClient.csproj.AssemblyReference.cache
+C:\Users\Gergely\source\repos\Redmine\RedmineClient\RedmineClient\obj\Debug\RedmineClient.Form1.resources
+C:\Users\Gergely\source\repos\Redmine\RedmineClient\RedmineClient\obj\Debug\RedmineClient.Properties.Resources.resources
+C:\Users\Gergely\source\repos\Redmine\RedmineClient\RedmineClient\obj\Debug\RedmineClient.csproj.GenerateResource.cache
+C:\Users\Gergely\source\repos\Redmine\RedmineClient\RedmineClient\obj\Debug\RedmineClient.csproj.CoreCompileInputs.cache
+C:\Users\Gergely\source\repos\Redmine\RedmineClient\RedmineClient\obj\Debug\RedmineClient.exe
+C:\Users\Gergely\source\repos\Redmine\RedmineClient\RedmineClient\obj\Debug\RedmineClient.pdb
+C:\Users\Gergely\source\repos\Redmine\RedmineClient\RedmineClient\obj\Debug\RedmineClient.Form2.resources

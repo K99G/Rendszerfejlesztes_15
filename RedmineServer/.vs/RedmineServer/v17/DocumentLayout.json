@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Gergely\\source\\repos\\Redmine\\RedmineServer\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}|RedmineServer\\RedmineServer.csproj|c:\\users\\gergely\\source\\repos\\redmine\\redmineserver\\redmineserver\\models\\projectdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}|RedmineServer\\RedmineServer.csproj|solutionrelative:redmineserver\\models\\projectdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}|RedmineServer\\RedmineServer.csproj|c:\\users\\gergely\\source\\repos\\redmine\\redmineserver\\redmineserver\\models\\managerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}|RedmineServer\\RedmineServer.csproj|solutionrelative:redmineserver\\models\\managerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}|RedmineServer\\RedmineServer.csproj|c:\\users\\gergely\\source\\repos\\redmine\\redmineserver\\redmineserver\\models\\taskdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}|RedmineServer\\RedmineServer.csproj|solutionrelative:redmineserver\\models\\taskdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProjectDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Gergely\\source\\repos\\Redmine\\RedmineServer\\RedmineServer\\Models\\ProjectDTO.cs",
+              "RelativeDocumentMoniker": "RedmineServer\\Models\\ProjectDTO.cs",
+              "ToolTip": "C:\\Users\\Gergely\\source\\repos\\Redmine\\RedmineServer\\RedmineServer\\Models\\ProjectDTO.cs",
+              "RelativeToolTip": "RedmineServer\\Models\\ProjectDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAcAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-01T02:04:41.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TaskDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Gergely\\source\\repos\\Redmine\\RedmineServer\\RedmineServer\\Models\\TaskDTO.cs",
+              "RelativeDocumentMoniker": "RedmineServer\\Models\\TaskDTO.cs",
+              "ToolTip": "C:\\Users\\Gergely\\source\\repos\\Redmine\\RedmineServer\\RedmineServer\\Models\\TaskDTO.cs",
+              "RelativeToolTip": "RedmineServer\\Models\\TaskDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-01T02:15:33.003Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ManagerDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Gergely\\source\\repos\\Redmine\\RedmineServer\\RedmineServer\\Models\\ManagerDTO.cs",
+              "RelativeDocumentMoniker": "RedmineServer\\Models\\ManagerDTO.cs",
+              "ToolTip": "C:\\Users\\Gergely\\source\\repos\\Redmine\\RedmineServer\\RedmineServer\\Models\\ManagerDTO.cs",
+              "RelativeToolTip": "RedmineServer\\Models\\ManagerDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-01T02:11:00.949Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

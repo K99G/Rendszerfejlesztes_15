@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "N6jB4nnJbw3L1nkWf4hvVVWVjvkyB0/cF2uFJp25/QmwpNeh1GjJdNLbe9higMyM4aurICyXQc8K/O1zfVlSug==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Gergely\\source\\repos\\Redmine\\RedmineServer\\RedmineServer\\RedmineServer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Gergely\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\Gergely\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Gergely\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
+    "C:\\Users\\Gergely\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
+    "C:\\Users\\Gergely\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
+    "C:\\Users\\Gergely\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}
