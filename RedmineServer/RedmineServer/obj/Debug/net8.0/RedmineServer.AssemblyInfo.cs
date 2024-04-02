@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RedmineServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c4167c279d395a002622391dde08aa6005b4da31")]
 [assembly: System.Reflection.AssemblyProductAttribute("RedmineServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RedmineServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
