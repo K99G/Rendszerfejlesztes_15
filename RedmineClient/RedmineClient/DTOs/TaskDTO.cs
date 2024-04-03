@@ -13,7 +13,7 @@ namespace RedmineClient.DTOs
         public int ID { get; set; }
         public string Project {  get; set; }
         public string Manager { get; set; }
-        public string DateTime { get; set; } 
+        public DateTime DateTime { get; set; } 
         public string Developer { get; set; }
     }
 }

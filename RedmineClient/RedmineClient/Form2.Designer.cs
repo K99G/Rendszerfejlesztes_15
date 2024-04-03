@@ -230,7 +230,7 @@
             this.buttonOwnTasks.TabIndex = 12;
             this.buttonOwnTasks.Text = "Általam létrehozott feladatok listázása";
             this.buttonOwnTasks.UseVisualStyleBackColor = true;
-            this.buttonOwnTasks.Click += new System.EventHandler(this.button1_Click);
+            this.buttonOwnTasks.Click += new System.EventHandler(this.button1_ClickAsync);
             // 
             // button2
             // 
@@ -240,7 +240,7 @@
             this.button2.TabIndex = 13;
             this.button2.Text = "Új feladat felvétele";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.button2_ClickAsync);
             // 
             // comboBoxDeveloper
             // 
