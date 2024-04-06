@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Pomelo.EntityFrameworkCore.MySql;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,10 +12,12 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("YourConnectionString")));
+    options.UseMySql(builder.Configuration.GetConnectionString("YourConnectionString"), 
+    new MariaDbServerVersion(new Version(10, 4, 32))));
 
 
 var app = builder.Build();
+
 
 //SQLserver tester
 using (var scope = app.Services.CreateScope())
@@ -32,6 +35,7 @@ using (var scope = app.Services.CreateScope())
         app.Logger.LogError(ex, "Hiba történt az adatbázis-kapcsolat tesztelése közben.");
     }
 }
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

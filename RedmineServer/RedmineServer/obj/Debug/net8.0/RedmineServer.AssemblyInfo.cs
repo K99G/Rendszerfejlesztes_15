@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RedmineServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d2179bed8cd5bdb9b40ce442b3ac3694c152598e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+abfc5b7138839944aca7bc5bdb0d092c092bf9e0")]
 [assembly: System.Reflection.AssemblyProductAttribute("RedmineServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RedmineServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
