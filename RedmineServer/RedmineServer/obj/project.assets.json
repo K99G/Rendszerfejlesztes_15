@@ -3166,23 +3166,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\SH3NKI\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\crowd\\.nuget\\packages\\": {},
+    "D:\\shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Egyetem\\Rendszerfejlesztés\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\RedmineServer.csproj",
+      "projectUniqueName": "D:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\RedmineServer.csproj",
       "projectName": "RedmineServer",
-      "projectPath": "D:\\Egyetem\\Rendszerfejlesztés\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\RedmineServer.csproj",
-      "packagesPath": "C:\\Users\\SH3NKI\\.nuget\\packages\\",
-      "outputPath": "D:\\Egyetem\\Rendszerfejlesztés\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\obj\\",
+      "projectPath": "D:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\RedmineServer.csproj",
+      "packagesPath": "C:\\Users\\crowd\\.nuget\\packages\\",
+      "outputPath": "D:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "D:\\shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\SH3NKI\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\crowd\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
