@@ -23,7 +23,7 @@ namespace RedmineServer.Controllers
         public async Task<ActionResult<IEnumerable<ManagerDTO>>> GetManagers()
         {
             var managers = await _context.Managers
-                .Select(m => new ManagerDTO { Email = m.Email, Name = m.Name })
+                .Select(m => new ManagerDTO { Email = m.Email, Name = m.Name, Password = m.Password})
                 .ToListAsync();
 
             return Ok(managers);

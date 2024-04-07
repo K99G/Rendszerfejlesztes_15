@@ -1,0 +1,12 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "dotnet",
+			"task": "watch webAppClient",
+			"file": "D:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\webAppClient\\webAppClient.csproj",
+			"problemMatcher": [],
+			"label": "dotnet: watch webAppClient"
+		}
+	]
+}

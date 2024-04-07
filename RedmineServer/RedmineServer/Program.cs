@@ -12,10 +12,17 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseMySql(builder.Configuration.GetConnectionString("YourConnectionString"), 
-    new MariaDbServerVersion(new Version(10, 4, 32))));
-
+// Add CORS service
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("BlazorPolicy",
+        builder =>
+        {
+            builder.WithOrigins("http://localhost:5000", "https://localhost:5001") // Adjust the port to match your Blazor app's
+                   .AllowAnyMethod()
+                   .AllowAnyHeader();
+        });
+});
 
 var app = builder.Build();
 
@@ -50,5 +57,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseCors("BlazorPolicy");
 
 app.Run();
