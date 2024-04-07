@@ -103,3 +103,8 @@ D:\gitHub_repos\Rendszerfejlesztes_15\RedmineServer\RedmineServer\obj\Debug\net8
 D:\gitHub_repos\Rendszerfejlesztes_15\RedmineServer\RedmineServer\obj\Debug\net8.0\RedmineServer.dll
 D:\gitHub_repos\Rendszerfejlesztes_15\RedmineServer\RedmineServer\obj\Debug\net8.0\refint\RedmineServer.dll
 D:\gitHub_repos\Rendszerfejlesztes_15\RedmineServer\RedmineServer\obj\Debug\net8.0\RedmineServer.pdb
+D:\gitHub_repos\Rendszerfejlesztes_15\RedmineServer\RedmineServer\bin\Debug\net8.0\RedmineServer.deps.json
+D:\gitHub_repos\Rendszerfejlesztes_15\RedmineServer\RedmineServer\bin\Debug\net8.0\RedmineServer.runtimeconfig.json
+D:\gitHub_repos\Rendszerfejlesztes_15\RedmineServer\RedmineServer\bin\Debug\net8.0\RedmineServer.pdb
+D:\gitHub_repos\Rendszerfejlesztes_15\RedmineServer\RedmineServer\obj\Debug\net8.0\RedmineServer.genruntimeconfig.cache
+D:\gitHub_repos\Rendszerfejlesztes_15\RedmineServer\RedmineServer\obj\Debug\net8.0\ref\RedmineServer.dll

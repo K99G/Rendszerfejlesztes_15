@@ -18,12 +18,25 @@ namespace RedmineServer.Controllers
             _context = context;
         }
 
-        [HttpGet]
+    [HttpGet]
         public async Task<ActionResult<IEnumerable<TaskDTO>>> GetTasks()
         {
             var tasks = await _context.Tasks
-                .Select(t => new TaskDTO { Name = t.Name, Description = t.Description, Project = t.Project_Id.ToString(), DateTime = t.Deadline.ToString() })
-                .ToListAsync();
+                        .Include(t => t.Project)
+                        .ThenInclude(p => p.ProjectType)
+                        .Include(t => t.Manager)
+                        .Select(t => new TaskDTO
+                        {
+                            ID = t.Id,
+                            Name = t.Name,
+                            Description = t.Description,
+                            ProjectId = t.Project_Id,
+                            ProjectName = t.Project.Name,
+                            UserId = t.Manager.Id,
+                            ManagerName = t.Manager.Name, 
+                            DateTime = t.Deadline
+                        })
+                        .ToListAsync();
 
             return Ok(tasks);
         }
