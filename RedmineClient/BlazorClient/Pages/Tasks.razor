@@ -1,0 +1,27 @@
+@page "/tasks"
+@using BlazorClient.Models
+@inject HttpClient Http
+
+<h3>Tasks</h3>
+@if (tasks == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <ul>
+    @foreach (var task in tasks)
+    {
+        <li>@task.Name - @task.Description</li>
+    }
+    </ul>
+}
+
+@code {
+    private List<TaskDTO>? tasks;
+
+    protected override async Task OnInitializedAsync()
+    {
+        tasks = await Http.GetFromJsonAsync<List<TaskDTO>>("api/Tasks");
+    }
+}
