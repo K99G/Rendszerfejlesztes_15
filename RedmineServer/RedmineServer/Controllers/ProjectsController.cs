@@ -22,7 +22,7 @@ namespace RedmineServer.Controllers
         public async Task<ActionResult<IEnumerable<ProjectDTO>>> GetProjects()
         {
             var projects = await _context.Projects
-                .Select(p => new ProjectDTO { Name = p.Name, Description = p.Description, Type = p.TypeId.ToString() })
+                .Select(p => new ProjectDTO { Name = p.Name, Description = p.Description, Type = p.Type_Id.ToString() })
                 .ToListAsync();
 
             return Ok(projects);
