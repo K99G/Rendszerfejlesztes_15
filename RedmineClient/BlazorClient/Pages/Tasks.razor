@@ -1,13 +1,22 @@
 @page "/tasks"
 @using BlazorClient.Models
+@using System.Text.Json
 @inject HttpClient Http
 
 <PageTitle>Tasks</PageTitle>
 
 <h3>Tasks</h3>
-@if (tasks == null)
+@if (tasks == null && !loadingFailed)
 {
     <p><em>Loading...</em></p>
+}
+else if (loadingFailed)
+{
+    <p><em>Failed to load tasks. Please try again later.</em></p>
+    @if (!string.IsNullOrWhiteSpace(errorMessage))
+    {
+        <p class="text-danger">Error: @errorMessage</p>
+    }
 }
 else
 {
@@ -20,10 +29,39 @@ else
 }
 
 @code {
-    private List<TaskDTO>? tasks;
+    private List<TaskDTO> tasks = new(); // Initialize as empty list
+    private bool loadingFailed = false;
+    private string? errorMessage;
 
     protected override async Task OnInitializedAsync()
     {
-        tasks = await Http.GetFromJsonAsync<List<TaskDTO>>("api/Tasks");
+        try
+        {
+            var fetchedTasks = await Http.GetFromJsonAsync<List<TaskDTO>>("/api/Tasks");
+            if (fetchedTasks != null)
+            {
+                tasks = fetchedTasks;
+            }
+        }
+        catch (HttpRequestException)
+        {
+            errorMessage = "There was a problem connecting to the server.";
+            loadingFailed = true;
+        }
+        catch (NotSupportedException)
+        {
+            errorMessage = "Server returned an invalid response.";
+            loadingFailed = true;
+        }
+        catch (JsonException)
+        {
+            errorMessage = "Error processing server response.";
+            loadingFailed = true;
+        }
+        catch (Exception)
+        {
+            errorMessage = "An unexpected error occurred.";
+            loadingFailed = true;
+        }
     }
 }
