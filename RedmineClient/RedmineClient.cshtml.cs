@@ -12,6 +12,11 @@ public class RedmineClientModel : PageModel
     {
         _clientFactory = clientFactory;
     }
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddRazorPages();
+        services.AddHttpClient();
+    }
 
     public List<Project> Projects { get; private set; }
 

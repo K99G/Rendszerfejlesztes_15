@@ -7,5 +7,10 @@
 <h1>@ViewData["Title"]</h1>
 
 <div>
-    
+    <ul>
+        @foreach(var project in Model.Projects)
+        {
+            <li>@project.Name - @project.Description</li>
+        }
+    </ul>
 </div>
