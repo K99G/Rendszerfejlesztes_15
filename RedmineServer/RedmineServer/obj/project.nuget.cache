@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "N5kqy2eIgfoMmKRkQFsciX/Z8EhUqfIA3OIEcSZfyncXBGmF2NCTQ7o/vZJ/mio1i1yIrXVtF8dLDIEovBcE7w==",
+  "dgSpecHash": "igpDLaK72/n/aFWQ99ECKf7qIg0MP/8l6+V9dtzNTp7N5Ta9xFysD6gEmzHM8V31iV+pDRr4bVU3TqN9/w5hTA==",
   "success": true,
-  "projectFilePath": "d:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\RedmineServer.csproj",
+  "projectFilePath": "D:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\RedmineServer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\crowd\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.3\\microsoft.entityframeworkcore.8.0.3.nupkg.sha512",
     "C:\\Users\\crowd\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.3\\microsoft.entityframeworkcore.abstractions.8.0.3.nupkg.sha512",
