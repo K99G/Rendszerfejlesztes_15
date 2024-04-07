@@ -1,26 +1,30 @@
-@page "/projects"
+@page "/managers"
+@using BlazorClient.Models
 @inject HttpClient Http
 
-<h3>Projects</h3>
-@if (projects == null)
+<PageTitle>Managers</PageTitle>
+
+<h3>Managers</h3>
+@if (managers == null)
 {
     <p><em>Loading...</em></p>
 }
 else
 {
     <ul>
-    @foreach (var project in projects)
+    @foreach (var manager in managers)
     {
-        <li>@project.Name - @project.Description</li>
+        <li>@manager.Name - @manager.Email</li>
     }
     </ul>
 }
 
 @code {
-    private List<ProjectDTO>? projects;
+    private List<ManagerDTO>? managers;
 
     protected override async Task OnInitializedAsync()
     {
-        projects = await Http.GetFromJsonAsync<List<ProjectDTO>>("api/Projects");
+        managers = await Http.GetFromJsonAsync<List<ManagerDTO>>("api/Managers");
     }
 }
+

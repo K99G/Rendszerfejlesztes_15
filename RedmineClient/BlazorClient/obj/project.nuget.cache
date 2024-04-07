@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fllNHRtcQVbGQb73yMX7hJud8BvedK/U8KOZtj8U3bxRQcT4oz7DWlNknCUz+C7M5xYyNVnnZW1K1Btuk8/EjQ==",
+  "dgSpecHash": "RWjMNECKDQoLM7GR9mTufUj8nJD1cRQgP9gzbRxoCGowph7R7Dq+C3OAsopsqYJOOcyLvUL15tI+tRwjSJhm9A==",
   "success": true,
-  "projectFilePath": "D:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorClient\\BlazorClient.csproj",
+  "projectFilePath": "d:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorClient\\BlazorClient.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\crowd\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.3\\microsoft.aspnetcore.authorization.8.0.3.nupkg.sha512",
     "C:\\Users\\crowd\\.nuget\\packages\\microsoft.aspnetcore.components\\8.0.3\\microsoft.aspnetcore.components.8.0.3.nupkg.sha512",
