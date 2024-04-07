@@ -4,9 +4,9 @@
 		{
 			"type": "dotnet",
 			"task": "watch webAppClient",
-			"file": "D:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\webAppClient\\webAppClient.csproj",
+			"file": "D:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorClient\\BlazorClient.csproj",
 			"problemMatcher": [],
-			"label": "dotnet: watch webAppClient"
+			"label": "dotnet: watch BlazorClient"
 		}
 	]
 }
