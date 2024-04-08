@@ -48,5 +48,41 @@ namespace RedmineServer.Controllers
                 return StatusCode(500, "Error accessing database");
             }
         }
+       /* [HttpGet("{id}")]
+        public async Task<ActionResult<IEnumerable<TaskDTO>>> GetTasksId()
+        {
+            try
+            {
+                // Retrieve all tasks including their associated project, project type, and manager.
+                var tasks = await _context.Tasks
+                    .Include(t => t.Project)
+                    .Include(t => t.Manager)
+                    .Select(t => new TaskDTO
+                    {
+                        ID = t.Id,
+                        Name = t.Name,
+                        Description = t.Description,
+                        ProjectId = t.Project_Id,
+                        ProjectName = t.Project.Name,
+                        UserId = t.Manager.Id,
+                        ManagerName = t.Manager.Name, 
+                        DateTime = t.Deadline
+                    })
+                    .ToListAsync();
+
+                return Ok(tasks);
+            }
+            catch (Exception)
+            {
+                // Return 500 Internal Server Error if database operation fails.
+                return StatusCode(500, "Error accessing database");
+            } */
+
+            // project alapján taskokat rendez
+
+            // manager alapján taskokat rendez
+
+            // taskot hozzáadni
+        
     }
 }

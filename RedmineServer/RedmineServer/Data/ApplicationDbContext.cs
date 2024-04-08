@@ -7,8 +7,7 @@ public class ApplicationDbContext : DbContext
 
     // Database tables
     public DbSet<Manager> Managers { get; set; }
-    public DbSet<Developer> Developers { get; set; }
-    public DbSet<ProjectDeveloper> ProjectDevelopers { get; set; }
+    public DbSet<Project_Developers> ProjectDevelopers { get; set; }
     public DbSet<Project> Projects { get; set; }
     public DbSet<Task> Tasks { get; set; }
 
@@ -24,22 +23,24 @@ public class ApplicationDbContext : DbContext
             .WithMany()
             .HasForeignKey(p => p.Type_Id);
 
+   
+  
         // Many-to-many relationship between projects and developers
-        modelBuilder.Entity<ProjectDeveloper>()
+        modelBuilder.Entity<Project_Developers>()
             .HasKey(pd => new { pd.Project_Id, pd.Developer_Id });
 
         // Each project has many developers
-        modelBuilder.Entity<ProjectDeveloper>()
+        modelBuilder.Entity<Project_Developers>()
             .HasOne(pd => pd.Project)
             .WithMany(p => p.ProjectDevelopers)
             .HasForeignKey(pd => pd.Project_Id);
 
         // Each developer has many projects
-        modelBuilder.Entity<ProjectDeveloper>()
+        modelBuilder.Entity<Project_Developers>()
             .HasOne(pd => pd.Developer)
-            .WithMany()
+            .WithMany(p => p.ProjectDevelopers)
             .HasForeignKey(pd => pd.Developer_Id);
-
+    
         // Each task belongs to one project
         modelBuilder.Entity<Task>()
             .HasOne(t => t.Project)

@@ -40,5 +40,4 @@ public class AccountController : ControllerBase
         // For simplicity, you can use a simple string comparison
         return enteredPassword == storedPassword;
     }
-
 }

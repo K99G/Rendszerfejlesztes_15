@@ -84,7 +84,7 @@ else
         catch (Exception ex)
         {
             // This will trigger Blazor's built-in error handling mechanism
-            throw new ApplicationException($"Error retrieving data: {ex.Message}");
+            throw new ApplicationException($"Error retrieving API data: {ex.Message}");
         }
         finally
         {

@@ -44,5 +44,31 @@ namespace RedmineServer.Controllers
                 return StatusCode(500, "Error accessing database");
             }
         }
+         [HttpGet("{id}")]
+         public async Task<ActionResult<IEnumerable<ProjectDTO>>> GetProjectsId(int id)
+        {
+            try
+            {
+                // Retrieve all projects including their associated project types.
+                var projects = await _context.Projects.Where(x=>x.Type_Id==id)
+                    .Include(p => p.ProjectType)
+                    .Select(p => new ProjectDTO 
+                    {
+                        ID = p.Id,
+                        Name = p.Name,
+                        Description = p.Description,
+                        TypeId = p.ProjectType.Id,
+                        TypeName = p.ProjectType.Name
+                    })
+                    .ToListAsync();
+
+                return Ok(projects);
+            }
+            catch (Exception)
+            {
+                // Return 500 Internal Server Error if database operation fails.
+                return StatusCode(500, "Error accessing database");
+            }
+        }
     }
 }

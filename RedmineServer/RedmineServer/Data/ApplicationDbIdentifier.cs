@@ -12,11 +12,11 @@ public class Developer
     public int Id { get; set; }
     public string Name { get; set; }
     public string Email { get; set; }
-    public ICollection<ProjectDeveloper> ProjectDevelopers { get; set; } // Collection of projects the developer is associated with
+    public ICollection<Project_Developers> ProjectDevelopers { get; set; } // Collection of projects the developer is associated with
 
 }
 
-public class ProjectDeveloper
+public class Project_Developers
 {
     public int Developer_Id { get; set; }  // Foreign key for Developer
     public Developer Developer { get; set; }  // Navigation property to Developer
@@ -33,7 +33,7 @@ public class Project
     public string Description { get; set; }
 
     public Project_Types ProjectType { get; set; }  // Navigation property to Project_Types
-    public ICollection<ProjectDeveloper> ProjectDevelopers { get; set; }  // Collection of developers associated with the project
+    public ICollection<Project_Developers> ProjectDevelopers { get; set; }  // Collection of developers associated with the project
     public ICollection<Task> Tasks { get; set; }  // Collection of tasks associated with the project
 }
 
