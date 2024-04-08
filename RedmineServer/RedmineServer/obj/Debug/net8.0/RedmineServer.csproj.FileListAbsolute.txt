@@ -108,3 +108,5 @@ D:\gitHub_repos\Rendszerfejlesztes_15\RedmineServer\RedmineServer\obj\Debug\net8
 D:\gitHub_repos\Rendszerfejlesztes_15\RedmineServer\RedmineServer\obj\Debug\net8.0\RedmineServer.pdb
 D:\gitHub_repos\Rendszerfejlesztes_15\RedmineServer\RedmineServer\obj\Debug\net8.0\RedmineServer.genruntimeconfig.cache
 D:\gitHub_repos\Rendszerfejlesztes_15\RedmineServer\RedmineServer\obj\Debug\net8.0\ref\RedmineServer.dll
+D:\gitHub_repos\Rendszerfejlesztes_15\RedmineServer\RedmineServer\bin\Debug\net8.0\Castle.Core.dll
+D:\gitHub_repos\Rendszerfejlesztes_15\RedmineServer\RedmineServer\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Proxies.dll

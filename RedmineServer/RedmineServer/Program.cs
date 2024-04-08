@@ -13,7 +13,7 @@ builder.Services.AddSwaggerGen();
 // Add Cors Service
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("DefaultPolicy",
+    options.AddPolicy("BlazorPolicy",
         builder =>
         {
             builder.WithOrigins("http://localhost:5165")
@@ -25,8 +25,7 @@ builder.Services.AddCors(options =>
 
 // Ensure your connection string name matches the one in your appsettings.json
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseLazyLoadingProxies()
-        .UseMySql(builder.Configuration.GetConnectionString("ConnectionString"), 
+    options.UseMySql(builder.Configuration.GetConnectionString("ConnectionString"), 
     new MariaDbServerVersion(new Version(10, 4, 32))));
 
 var app = builder.Build();
@@ -60,9 +59,10 @@ app.UseHttpsRedirection();
 
 app.UseRouting(); // Ensure routing is enabled if you use endpoints directly.
 
+app.UseCors("BlazorPolicy");
+
 app.UseAuthorization();
 
 app.MapControllers();
-
 
 app.Run();

@@ -1,7 +1,38 @@
 ﻿@page "/"
+@using BlazorApp.Models
+@inject HttpClient Http
+
 
 <PageTitle>Home</PageTitle>
 
 <h1>Hello, world!</h1>
 
 Welcome to your new app.
+
+
+@if (managers == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <h2>Managers</h2>
+    <ul>
+        @foreach (var manager in managers)
+        {
+            <li>@manager.Name (@manager.Email)</li>
+        }
+    </ul>
+}
+
+@code {
+    private ManagerModel[]? managers;
+    private TaskModel[]? tasks;
+    private ProjectModel[]? projects;
+
+    protected override async Task OnInitializedAsync()
+    {
+        managers = await Http.GetFromJsonAsync<ManagerModel[]>("api/managers");
+    }
+} 
+

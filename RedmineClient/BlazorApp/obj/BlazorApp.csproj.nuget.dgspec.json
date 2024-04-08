@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\BlazorApp.csproj": {}
+    "d:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\BlazorApp.csproj": {}
   },
   "projects": {
-    "D:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\BlazorApp.csproj": {
+    "d:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\BlazorApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\BlazorApp.csproj",
+        "projectUniqueName": "d:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\BlazorApp.csproj",
         "projectName": "BlazorApp",
-        "projectPath": "D:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\BlazorApp.csproj",
+        "projectPath": "d:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\BlazorApp.csproj",
         "packagesPath": "C:\\Users\\crowd\\.nuget\\packages\\",
-        "outputPath": "D:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\obj\\",
+        "outputPath": "d:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\shared\\NuGetPackages"
