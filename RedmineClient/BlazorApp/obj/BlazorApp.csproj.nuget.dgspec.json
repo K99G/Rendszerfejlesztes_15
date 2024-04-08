@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\RedmineServer.csproj": {}
+    "D:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\BlazorApp.csproj": {}
   },
   "projects": {
-    "D:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\RedmineServer.csproj": {
+    "D:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\BlazorApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\RedmineServer.csproj",
-        "projectName": "RedmineServer",
-        "projectPath": "D:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\RedmineServer.csproj",
+        "projectUniqueName": "D:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\BlazorApp.csproj",
+        "projectName": "BlazorApp",
+        "projectPath": "D:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\BlazorApp.csproj",
         "packagesPath": "C:\\Users\\crowd\\.nuget\\packages\\",
-        "outputPath": "D:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\obj\\",
+        "outputPath": "D:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\shared\\NuGetPackages"
@@ -49,25 +49,26 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
+            "Microsoft.AspNetCore.Components.WebAssembly": {
               "target": "Package",
               "version": "[8.0.3, )"
             },
-            "Microsoft.EntityFrameworkCore.Proxies": {
+            "Microsoft.AspNetCore.Components.WebAssembly.DevServer": {
+              "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.3, )"
             },
-            "Newtonsoft.Json": {
+            "Microsoft.NET.ILLink.Tasks": {
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[13.0.3, )"
+              "version": "[8.0.3, )",
+              "autoReferenced": true
             },
-            "Pomelo.EntityFrameworkCore.MySql": {
+            "Microsoft.NET.Sdk.WebAssembly.Pack": {
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.2, )"
-            },
-            "Swashbuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[6.4.0, )"
+              "version": "[8.0.3, )",
+              "autoReferenced": true
             }
           },
           "imports": [
@@ -81,15 +82,23 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
+              "version": "[8.0.3, 8.0.3]"
+            }
+          ],
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "browser-wasm": {
+          "#import": []
         }
       }
     }

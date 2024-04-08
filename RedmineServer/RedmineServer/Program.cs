@@ -10,12 +10,24 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Add Cors Service
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("DefaultPolicy",
+        builder =>
+        {
+            builder.WithOrigins("http://localhost:5165")
+                   .AllowAnyHeader()
+                   .AllowAnyMethod();
+        });
+});
+
+
 // Ensure your connection string name matches the one in your appsettings.json
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseMySql(builder.Configuration.GetConnectionString("ConnectionString"), 
+    options.UseLazyLoadingProxies()
+        .UseMySql(builder.Configuration.GetConnectionString("ConnectionString"), 
     new MariaDbServerVersion(new Version(10, 4, 32))));
-
-
 
 var app = builder.Build();
 
