@@ -2,37 +2,94 @@
 @using BlazorApp.Models
 @inject HttpClient Http
 
-
 <PageTitle>Home</PageTitle>
 
 <h1>Hello, world!</h1>
 
 Welcome to your new app.
 
-
-@if (managers == null)
+@if (loading)
 {
     <p><em>Loading...</em></p>
 }
 else
 {
-    <h2>Managers</h2>
-    <ul>
-        @foreach (var manager in managers)
-        {
-            <li>@manager.Name (@manager.Email)</li>
-        }
-    </ul>
+    @if (managers == null)
+    {
+        <p>No managers found.</p>
+    }
+    else
+    {
+        <h2>Managers</h2>
+        <ul>
+            @foreach (var manager in managers)
+            {
+                <li>@manager.Name (@manager.Email)</li>
+            }
+        </ul>
+    }
+
+    @if (projects == null)
+    {
+        <p>No projects found.</p>
+    }
+    else
+    {
+        <h2>Projects</h2>
+        <ul>
+            @foreach (var project in projects)
+            {
+                <li>@project.Name</li>
+                <li>Description: @project.Description</li>
+                <li>Type: @project.TypeName</li>
+            }
+        </ul>
+    }
+
+    @if (tasks == null)
+    {
+        <p>No tasks found.</p>
+    }
+    else
+    {
+        <h2>Tasks</h2>
+        <ul>
+            @foreach (var task in tasks)
+            {
+                <li>@task.Name</li>
+                <li>Description: @task.Description</li>
+                <li>Project: @task.ProjectName</li>
+                <li>Manager: @task.ManagerName</li>
+                <li>Deadline: @task.DateTime</li>
+            }
+        </ul>
+    }
 }
 
 @code {
     private ManagerModel[]? managers;
-    private TaskModel[]? tasks;
     private ProjectModel[]? projects;
+    private TaskModel[]? tasks;
+    private bool loading = true;
 
     protected override async Task OnInitializedAsync()
     {
-        managers = await Http.GetFromJsonAsync<ManagerModel[]>("api/managers");
+        try
+        {
+            // Retrieve data from APIs
+            managers = await Http.GetFromJsonAsync<ManagerModel[]>("api/managers");
+            projects = await Http.GetFromJsonAsync<ProjectModel[]>("api/projects");
+            tasks = await Http.GetFromJsonAsync<TaskModel[]>("api/tasks");
+        }
+        catch (Exception ex)
+        {
+            // This will trigger Blazor's built-in error handling mechanism
+            throw new ApplicationException($"Error retrieving data: {ex.Message}");
+        }
+        finally
+        {
+            // Ensure loading is set to false regardless of success or failure
+            loading = false;
+        }
     }
-} 
-
+}

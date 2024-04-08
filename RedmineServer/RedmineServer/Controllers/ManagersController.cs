@@ -1,10 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RedmineServer.Models;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 
 namespace RedmineServer.Controllers
 {
@@ -19,14 +17,23 @@ namespace RedmineServer.Controllers
             _context = context;
         }
 
+        // Retrieves all managers as ManagerDTO objects.
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ManagerDTO>>> GetManagers()
         {
-            var managers = await _context.Managers
-                .Select(m => new ManagerDTO { Email = m.Email, Name = m.Name, Password = m.Password})
-                .ToListAsync();
+            try
+            {
+                var managers = await _context.Managers
+                    .Select(m => new ManagerDTO { Email = m.Email, Name = m.Name, Password = m.Password })
+                    .ToListAsync();
 
-            return Ok(managers);
+                return Ok(managers);
+            }
+            catch (Exception)
+            {
+                // Return an internal server error if database operation fails.
+                return StatusCode(500, "Error accessing database");
+            }
         }
     }
 }
