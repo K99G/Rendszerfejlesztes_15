@@ -11,6 +11,7 @@
         public int UserId { get; set; }
         public string ManagerName { get; set; }
         public DateTime DateTime { get; set; }
+        public string Developer { get; set; }
 
     }
 }
