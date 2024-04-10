@@ -1,7 +1,0 @@
-d:\gitHub_repos\Rendszerfejlesztes_15\RedmineClient\BlazorClient\obj\Debug\net8.0\BlazorClient.csproj.AssemblyReference.cache
-d:\gitHub_repos\Rendszerfejlesztes_15\RedmineClient\BlazorClient\obj\Debug\net8.0\BlazorClient.GeneratedMSBuildEditorConfig.editorconfig
-d:\gitHub_repos\Rendszerfejlesztes_15\RedmineClient\BlazorClient\obj\Debug\net8.0\BlazorClient.AssemblyInfoInputs.cache
-d:\gitHub_repos\Rendszerfejlesztes_15\RedmineClient\BlazorClient\obj\Debug\net8.0\BlazorClient.AssemblyInfo.cs
-d:\gitHub_repos\Rendszerfejlesztes_15\RedmineClient\BlazorClient\obj\Debug\net8.0\BlazorClient.csproj.CoreCompileInputs.cache
-d:\gitHub_repos\Rendszerfejlesztes_15\RedmineClient\BlazorClient\obj\Debug\net8.0\BlazorClient.MvcApplicationPartsAssemblyInfo.cache
-d:\gitHub_repos\Rendszerfejlesztes_15\RedmineClient\BlazorClient\obj\Debug\net8.0\BlazorClient.sourcelink.json
