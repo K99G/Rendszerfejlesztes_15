@@ -65,12 +65,60 @@ else
             }
         </ul>
     }
+    <h3>Task Search</h3>
+    <input @bind="taskId" type="number" placeholder="Enter Task ID..." />
+    <button @onclick="SearchTask">Search</button>
+    @if(tasks != null && taskId != 0)
+    {
+        <h2>Task</h2>
+        <ul>
+            @foreach (var task in tasks)
+            {
+                <li>@task.Name</li>
+                <li>Description: @task.Description</li>
+                <li>Project: @task.ProjectName</li>
+                <li>Manager: @task.ManagerName</li>
+                <li>Deadline: @task.DateTime</li>
+            }
+        </ul>
+    }
+    <h3>Manager Search</h3>
+    <input @bind="managerId" type="number" placeholder="Enter Task ID..." />
+    <button @onclick="SearchManager">Search</button>
+    @if(managers != null && managerId != 0)
+    {
+    <h2>Manager</h2>
+        <ul>
+            @foreach (var manager in managers)
+            {   <li>@manager.Name (@manager.Email)</li> }
+        </ul>
+    }
+    <h3>Project Search</h3>
+    <input @bind="projectId" type="number" placeholder="Enter Task ID..." />
+    <button @onclick="SearchProject">Search</button>
+    @if(projects != null && projectId != 0)
+    {
+        <h2>Projects</h2>
+        <ul>
+            @foreach (var project in projects)
+            {
+                <li>@project.Name</li>
+                <li>Description: @project.Description</li>
+                <li>Type: @project.TypeName</li>
+            }
+        </ul>
+    }
+
 }
 
 @code {
+    private int taskId;
+    private int managerId;
+    private int projectId;
     private ManagerModel[]? managers;
     private ProjectModel[]? projects;
     private TaskModel[]? tasks;
+
     private bool loading = true;
 
     protected override async Task OnInitializedAsync()
@@ -81,8 +129,7 @@ else
             managers = await Http.GetFromJsonAsync<ManagerModel[]>("api/managers");
             projects = await Http.GetFromJsonAsync<ProjectModel[]>("api/projects");
             tasks = await Http.GetFromJsonAsync<TaskModel[]>("api/tasks");
-            // Retrieve data from APIs By Id
-          
+
             // Send data to API
         }
         catch (Exception ex)
@@ -95,5 +142,19 @@ else
             // Ensure loading is set to false regardless of success or failure
             loading = false;
         }
+    
+    }
+     // Retrieve data from APIs By Id
+    private async Task SearchTask()
+    {
+        tasks = await Http.GetFromJsonAsync<TaskModel[]>($"api/Tasks/{taskId}");
+    }
+     private async Task SearchManager()
+    {
+        managers = await Http.GetFromJsonAsync<ManagerModel[]>($"api/Managers/{managerId}");
+    }
+     private async Task SearchProject()
+    {
+        projects = await Http.GetFromJsonAsync<ProjectModel[]>($"api/Projects/{projectId}");
     }
 }

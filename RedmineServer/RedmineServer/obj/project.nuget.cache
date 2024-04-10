@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dYx9tBMy1mMHv6eFoeAlWkOeKhdXHIeLHtGmrdfjac9WgsDJNNwWISwVHHk/uIU07JgSt4v5F0kYJD53OsGuEA==",
+  "dgSpecHash": "3VJWbSFvGeDW/pRwcVvTrrOhST/dBeN+lDlaxsFN6ZO4HSLy4wMaF6vinjy7xamo07crGGEdjVmkeEq3CulWZg==",
   "success": true,
-  "projectFilePath": "d:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\RedmineServer.csproj",
+  "projectFilePath": "D:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\RedmineServer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\crowd\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\crowd\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.3\\microsoft.entityframeworkcore.8.0.3.nupkg.sha512",
