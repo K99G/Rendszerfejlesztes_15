@@ -13,39 +13,39 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = BlazorApp
 build_property.RootNamespace = BlazorApp
-build_property.ProjectDir = d:\gitHub_repos\Rendszerfejlesztes_15\RedmineClient\BlazorApp\
+build_property.ProjectDir = D:\gitHub_repos\Rendszerfejlesztes_15\RedmineClient\BlazorApp\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = false
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = d:\gitHub_repos\Rendszerfejlesztes_15\RedmineClient\BlazorApp
+build_property.MSBuildProjectDirectory = D:\gitHub_repos\Rendszerfejlesztes_15\RedmineClient\BlazorApp
 build_property._RazorSourceGeneratorDebug = 
 
-[d:/gitHub_repos/Rendszerfejlesztes_15/RedmineClient/BlazorApp/App.razor]
+[D:/gitHub_repos/Rendszerfejlesztes_15/RedmineClient/BlazorApp/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/gitHub_repos/Rendszerfejlesztes_15/RedmineClient/BlazorApp/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+[D:/gitHub_repos/Rendszerfejlesztes_15/RedmineClient/BlazorApp/Pages/Add-task.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkLXRhc2sucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/gitHub_repos/Rendszerfejlesztes_15/RedmineClient/BlazorApp/Pages/Home.razor]
+[D:/gitHub_repos/Rendszerfejlesztes_15/RedmineClient/BlazorApp/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/gitHub_repos/Rendszerfejlesztes_15/RedmineClient/BlazorApp/Pages/Weather.razor]
+[D:/gitHub_repos/Rendszerfejlesztes_15/RedmineClient/BlazorApp/Pages/Weather.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2VhdGhlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/gitHub_repos/Rendszerfejlesztes_15/RedmineClient/BlazorApp/_Imports.razor]
+[D:/gitHub_repos/Rendszerfejlesztes_15/RedmineClient/BlazorApp/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/gitHub_repos/Rendszerfejlesztes_15/RedmineClient/BlazorApp/Layout/MainLayout.razor]
+[D:/gitHub_repos/Rendszerfejlesztes_15/RedmineClient/BlazorApp/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-kc989pta5g
 
-[d:/gitHub_repos/Rendszerfejlesztes_15/RedmineClient/BlazorApp/Layout/NavMenu.razor]
+[D:/gitHub_repos/Rendszerfejlesztes_15/RedmineClient/BlazorApp/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-iqpjrornlq
