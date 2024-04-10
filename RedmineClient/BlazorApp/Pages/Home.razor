@@ -20,6 +20,7 @@ else
     }
     else
     {
+        
         <h2>Managers</h2>
         <ul>
             @foreach (var manager in managers)
@@ -81,22 +82,8 @@ else
             projects = await Http.GetFromJsonAsync<ProjectModel[]>("api/projects");
             tasks = await Http.GetFromJsonAsync<TaskModel[]>("api/tasks");
             // Retrieve data from APIs By Id
-            public async Task<ManagerModel> GetManagerByIdAsync(string id)
-            {   return await Http.GetFromJsonAsync<ManagerModel>($"api/Managers/{id}"); }
-            public async Task<ProjectModel> GetProjectByIdAsync(string id)
-            {   return await Http.GetFromJsonAsync<ProjectModel>($"api/Projects/{id}"); }
-            public async Task<TaskModel[]> GetTasksByProjectIdAsync(string projectId)
-            {   return await Http.GetFromJsonAsync<TaskModel[]>($"api/Tasks/project/{projectId}"); }
-            public async Task<TaskModel[]> GetTasksByManagerIdAsync(string managerId)
-            {   return await Http.GetFromJsonAsync<TaskModel[]>($"api/Tasks/manager/{managerId}"); }
+          
             // Send data to API
-            public async Task CreateTaskAsync(TaskModel newTask)
-            {
-                var response = await Http.PostAsJsonAsync("api/Tasks", newTask);
-                if (!response.IsSuccessStatusCode){
-                    throw new ApplicationException("Failed to create task");
-                }
-}
         }
         catch (Exception ex)
         {
