@@ -140,7 +140,7 @@ INSERT INTO `project_types` (`id`, `name`) VALUES
 --
 
 CREATE TABLE `tasks` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `name` varchar(255) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL,
   `project_id` int(11) DEFAULT NULL,
@@ -199,7 +199,6 @@ ALTER TABLE `project_types`
 -- A tábla indexei `tasks`
 --
 ALTER TABLE `tasks`
-  ADD PRIMARY KEY (`id`),
   ADD KEY `project_id` (`project_id`),
   ADD KEY `user_id` (`user_id`);
 
