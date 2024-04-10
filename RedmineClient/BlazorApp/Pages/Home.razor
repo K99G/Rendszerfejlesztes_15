@@ -108,6 +108,41 @@ else
             }
         </ul>
     }
+    <h3>Search Tasks by Project ID</h3>
+<input @bind="projectId" type="number" placeholder="Enter Project ID..." />
+<button @onclick="SearchTasksByProjectId">Search</button>
+
+    @if(projectTasks != null && projectId != 0)
+    {
+        <h2>Tasks for Project @projectId</h2>
+        <ul>
+            @foreach (var task in projectTasks)
+            {
+                <li>@task.Name</li>
+                <li>Description: @task.Description</li>
+                <li>Deadline: @task.DateTime)</li>
+                
+            }
+        </ul>
+    }
+
+    <h3>Search Tasks by Manager ID</h3>
+    <input @bind="managerId" type="number" placeholder="Enter Manager ID..." />
+    <button @onclick="SearchTasksByManagerId">Search</button>
+
+    @if(managerTasks != null && managerId != 0)
+    {
+        <h2>Tasks for Manager @managerId</h2>
+        <ul>
+            @foreach (var task in managerTasks)
+            {
+                <li>@task.Name</li>
+                <li>Description: @task.Description</li>
+                <li>Deadline: @task.DateTime)</li>
+                
+            }
+        </ul>
+    }
 
 }
 
@@ -115,9 +150,13 @@ else
     private int taskId;
     private int managerId;
     private int projectId;
+
     private ManagerModel[]? managers;
     private ProjectModel[]? projects;
     private TaskModel[]? tasks;
+
+    private TaskModel[]? projectTasks;
+    private TaskModel[]? managerTasks;
 
     private bool loading = true;
 
@@ -156,5 +195,15 @@ else
      private async Task SearchProject()
     {
         projects = await Http.GetFromJsonAsync<ProjectModel[]>($"api/Projects/{projectId}");
+    }
+      // Method to search tasks by project ID
+    private async Task SearchTasksByProjectId()
+    {
+        projectTasks = await Http.GetFromJsonAsync<TaskModel[]>($"api/Tasks/project/{projectId}");
+    }
+    // Method to search tasks by manager ID
+    private async Task SearchTasksByManagerId()
+    {
+        managerTasks = await Http.GetFromJsonAsync<TaskModel[]>($"api/Tasks/manager/{managerId}");
     }
 }
