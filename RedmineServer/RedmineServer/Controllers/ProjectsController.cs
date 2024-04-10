@@ -45,7 +45,7 @@ namespace RedmineServer.Controllers
             }
         }
          [HttpGet("{id}")]
-         public async Task<ActionResult<IEnumerable<ProjectDTO>>> GetProjectsId(int id)
+         public async Task<ActionResult<IEnumerable<ProjectDTO>>> GetProjectsByTypeId(int id)
         {
             try
             {

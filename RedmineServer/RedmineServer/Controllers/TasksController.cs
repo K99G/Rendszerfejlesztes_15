@@ -129,11 +129,11 @@ namespace RedmineServer.Controllers
         // taskot hozzáadni
         [HttpPost]
         public async Task<IActionResult> PostTodoItem(TaskDTO taskDTO)
-        { 
+        {
             var developerID = _context.Developers.Where(p => p.Name == taskDTO.Developer).FirstOrDefault().Id;
             //var userID = _context.Managers.Where(m => m.Name == taskDTO.Name).FirstOrDefault().Id;
             //var projectID = _context.Projects.Where(p => p.Name == taskDTO.ProjectName).FirstOrDefault().Id;
-            
+
             var task = new Task
             {
                 Name = taskDTO.Name,
@@ -144,12 +144,15 @@ namespace RedmineServer.Controllers
             };
 
             _context.Tasks.Add(task);
-            if (ProjectDevExists(taskDTO.ProjectId, developerID)!)
-                _context.ProjectDevelopers.Add(new Project_Developers
+            if (ProjectDevExists(taskDTO.ProjectId, developerID)==false)
+            {
+
+                _context.Project_Developers.Add(new Project_Developers
                 {
                     Developer_Id = developerID,
                     Project_Id = taskDTO.ProjectId,
                 });
+            }
 
             await _context.SaveChangesAsync();
 
@@ -164,7 +167,7 @@ namespace RedmineServer.Controllers
         }
         private bool ProjectDevExists(int projectID, int developerID)
         {
-            return _context.ProjectDevelopers.Any(e => (e.Project_Id == projectID) && (e.Developer_Id == developerID));
+            return _context.Project_Developers.Any(e => ((e.Project_Id == projectID) && (e.Developer_Id == developerID)));
         }
     }
 }

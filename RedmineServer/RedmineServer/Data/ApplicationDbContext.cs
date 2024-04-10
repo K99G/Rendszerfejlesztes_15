@@ -7,7 +7,7 @@ public class ApplicationDbContext : DbContext
 
     // Database tables
     public DbSet<Manager> Managers { get; set; }
-    public DbSet<Project_Developers> ProjectDevelopers { get; set; }
+    public DbSet<Project_Developers> Project_Developers { get; set; }
     public DbSet<Project> Projects { get; set; }
     public DbSet<Task> Tasks { get; set; }
     public DbSet<Developer> Developers { get; set; }
@@ -33,13 +33,13 @@ public class ApplicationDbContext : DbContext
         // Each project has many developers
         modelBuilder.Entity<Project_Developers>()
             .HasOne(pd => pd.Project)
-            .WithMany(p => p.ProjectDevelopers)
+            .WithMany(p => p.Project_Developers)
             .HasForeignKey(pd => pd.Project_Id);
 
         // Each developer has many projects
         modelBuilder.Entity<Project_Developers>()
             .HasOne(pd => pd.Developer)
-            .WithMany(p => p.ProjectDevelopers)
+            .WithMany(p => p.Project_Developers)
             .HasForeignKey(pd => pd.Developer_Id);
     
         // Each task belongs to one project

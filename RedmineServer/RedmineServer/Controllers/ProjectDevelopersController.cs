@@ -27,7 +27,7 @@ namespace RedmineServer.Controllers
             try
             {
                 // Retrieve all Developers including their associated project.
-                var ProjectDevelopers = await _context.ProjectDevelopers
+                var ProjectDevelopers = await _context.Project_Developers
                     .Include(pd => pd.Project)
                     .Include(pd => pd.Developer)
                     .Select(pd => new ProjectDeveloperDTO 
