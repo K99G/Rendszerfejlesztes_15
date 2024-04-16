@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using RedmineServer.Models;
 
 public class ApplicationDbContext : DbContext
 {
