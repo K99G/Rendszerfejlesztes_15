@@ -1,0 +1,98 @@
+﻿@page "/"
+
+@using System.Net.Http
+@using System.Text.RegularExpressions
+@using System.Threading.Tasks
+@using System.Net.Http.Json
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.JSInterop
+@using System.Net
+
+@inject HttpClient HttpClient
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
+
+<h3>Login</h3>
+
+@if (!string.IsNullOrEmpty(ErrorMessage))
+{
+    <p>@ErrorMessage</p>
+}
+
+<form @onsubmit="HandleSubmit">
+    <label>Email:</label>
+    <input id="typeEmail" type="text" @bind="Email" />
+    <br />
+    <label>Password:</label>
+    <input id="typePassword" type="password" @bind="Password" />
+    <br />
+    <button type="submit">Login</button>
+</form>
+
+@code {
+    private string? Email { get; set; }
+    private string? Password { get; set; }
+    private string? ErrorMessage { get; set; }
+
+    private async Task HandleSubmit()
+    {
+        string email = Email;
+        string password = Password;
+
+        if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+        {
+            ErrorMessage = "Email and password are required!";
+            return;
+        }
+
+        if (!ValidateEmail(email))
+        {
+            ErrorMessage = "Invalid email format!";
+            return;
+        }
+
+        // Construct the POST request URL with credentials as query parameters
+
+        string apiUrl = $"{HttpClient.BaseAddress}Account/login?email={WebUtility.UrlEncode(email)}&password={WebUtility.UrlEncode(password)}";
+
+        // Send the POST request
+        var response = await HttpClient.PostAsync(apiUrl, null);
+
+        //var loginModel = new { email, password };
+        //var response = await HttpClient.PostAsJsonAsync("/Account/login", loginModel);
+
+        if (response.IsSuccessStatusCode)
+        {
+            // Authentication successful, extract and store the token
+            var tokenResponse = await response.Content.ReadFromJsonAsync<TokenResponse>();
+            if (tokenResponse != null && !string.IsNullOrEmpty(tokenResponse.Token))
+            {
+                // Store the token securely (e.g., in localStorage)
+                await JSRuntime.InvokeVoidAsync("localStorage.setItem", "token", tokenResponse.Token);
+
+                // Navigate to another page
+                NavigationManager.NavigateTo("/home");
+            }
+            else
+            {
+                // Token not received, display error message
+                ErrorMessage = "Token not received from server.";
+            }
+        }
+        else
+        {
+            // Authentication failed, display error message
+            ErrorMessage = await response.Content.ReadAsStringAsync();
+        }
+    }
+
+    private bool ValidateEmail(string email)
+    {
+        var re = new Regex(@"\S+@\S+\.\S+");
+        return re.IsMatch(email);
+    }
+    public class TokenResponse
+    {
+        public string Token { get; set; }
+    }
+}

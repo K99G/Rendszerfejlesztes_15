@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "d:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\BlazorApp.csproj": {}
+    "D:\\Egyetem\\Rendszerfejlesztés\\LoginWithToken\\RedmineClient\\BlazorApp\\BlazorApp.csproj": {}
   },
   "projects": {
-    "d:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\BlazorApp.csproj": {
+    "D:\\Egyetem\\Rendszerfejlesztés\\LoginWithToken\\RedmineClient\\BlazorApp\\BlazorApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\BlazorApp.csproj",
+        "projectUniqueName": "D:\\Egyetem\\Rendszerfejlesztés\\LoginWithToken\\RedmineClient\\BlazorApp\\BlazorApp.csproj",
         "projectName": "BlazorApp",
-        "projectPath": "d:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\BlazorApp.csproj",
-        "packagesPath": "C:\\Users\\crowd\\.nuget\\packages\\",
-        "outputPath": "d:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\obj\\",
+        "projectPath": "D:\\Egyetem\\Rendszerfejlesztés\\LoginWithToken\\RedmineClient\\BlazorApp\\BlazorApp.csproj",
+        "packagesPath": "C:\\Users\\SH3NKI\\.nuget\\packages\\",
+        "outputPath": "D:\\Egyetem\\Rendszerfejlesztés\\LoginWithToken\\RedmineClient\\BlazorApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\crowd\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\SH3NKI\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -61,13 +61,13 @@
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.4, )",
+              "version": "[8.0.3, )",
               "autoReferenced": true
             },
             "Microsoft.NET.Sdk.WebAssembly.Pack": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.4, )",
+              "version": "[8.0.3, )",
               "autoReferenced": true
             }
           },
@@ -85,7 +85,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-              "version": "[8.0.4, 8.0.4]"
+              "version": "[8.0.3, 8.0.3]"
             }
           ],
           "frameworkReferences": {
@@ -93,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {

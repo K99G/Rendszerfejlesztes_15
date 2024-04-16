@@ -1,14 +1,12 @@
-﻿@page "/"
+﻿@page "/home"
+
 @using BlazorApp.Models
 @using Microsoft.AspNetCore.Components.Forms
+
 @inject HttpClient Http
 
 
 <PageTitle>Home</PageTitle>
-
-<h1>Hello, world!</h1>
-
-Welcome to your new app.
 
 @if(currentState == ComponentState.Loading)
 {

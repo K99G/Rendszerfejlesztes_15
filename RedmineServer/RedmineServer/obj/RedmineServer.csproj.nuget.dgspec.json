@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "d:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\RedmineServer.csproj": {}
+    "D:\\Egyetem\\Rendszerfejlesztés\\LoginWithToken\\RedmineServer\\RedmineServer\\RedmineServer.csproj": {}
   },
   "projects": {
-    "d:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\RedmineServer.csproj": {
+    "D:\\Egyetem\\Rendszerfejlesztés\\LoginWithToken\\RedmineServer\\RedmineServer\\RedmineServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\RedmineServer.csproj",
+        "projectUniqueName": "D:\\Egyetem\\Rendszerfejlesztés\\LoginWithToken\\RedmineServer\\RedmineServer\\RedmineServer.csproj",
         "projectName": "RedmineServer",
-        "projectPath": "d:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\RedmineServer.csproj",
-        "packagesPath": "C:\\Users\\crowd\\.nuget\\packages\\",
-        "outputPath": "d:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\obj\\",
+        "projectPath": "D:\\Egyetem\\Rendszerfejlesztés\\LoginWithToken\\RedmineServer\\RedmineServer\\RedmineServer.csproj",
+        "packagesPath": "C:\\Users\\SH3NKI\\.nuget\\packages\\",
+        "outputPath": "D:\\Egyetem\\Rendszerfejlesztés\\LoginWithToken\\RedmineServer\\RedmineServer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\crowd\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\SH3NKI\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -68,6 +68,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[7.5.1, )"
             }
           },
           "imports": [
@@ -89,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
