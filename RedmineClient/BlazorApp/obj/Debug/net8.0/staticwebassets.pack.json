@@ -1,59 +1,59 @@
 {
   "Files": [
     {
-      "Id": "d:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "Id": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
       "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
     },
     {
-      "Id": "d:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\obj\\Debug\\net8.0\\compressed\\ukr4jdqo1f.gz",
+      "Id": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\obj\\Debug\\net8.0\\compressed\\0bvhgpqo31.gz",
       "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
     },
     {
-      "Id": "d:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\BlazorApp.styles.css",
+      "Id": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\BlazorApp.styles.css",
       "PackagePath": "staticwebassets\\BlazorApp.styles.css"
     },
     {
-      "Id": "d:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\obj\\Debug\\net8.0\\service-worker-assets.js",
+      "Id": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\obj\\Debug\\net8.0\\service-worker-assets.js",
       "PackagePath": "staticwebassets\\service-worker-assets.js"
     },
     {
-      "Id": "d:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\obj\\Debug\\net8.0\\service-worker\\service-worker.published.js",
+      "Id": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\obj\\Debug\\net8.0\\service-worker\\service-worker.published.js",
       "PackagePath": "staticwebassets\\service-worker.js"
     },
     {
-      "Id": "d:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\wwwroot\\css\\app.css",
+      "Id": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\wwwroot\\css\\app.css",
       "PackagePath": "staticwebassets\\css\\app.css"
     },
     {
-      "Id": "d:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Id": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Id": "d:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Id": "d:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\wwwroot\\favicon.png",
+      "Id": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
-      "Id": "d:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\wwwroot\\icon-192.png",
+      "Id": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\wwwroot\\icon-192.png",
       "PackagePath": "staticwebassets\\icon-192.png"
     },
     {
-      "Id": "d:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\wwwroot\\icon-512.png",
+      "Id": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\wwwroot\\icon-512.png",
       "PackagePath": "staticwebassets\\icon-512.png"
     },
     {
-      "Id": "d:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\wwwroot\\index.html",
+      "Id": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
     {
-      "Id": "d:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\wwwroot\\manifest.webmanifest",
+      "Id": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\wwwroot\\manifest.webmanifest",
       "PackagePath": "staticwebassets\\manifest.webmanifest"
     },
     {
-      "Id": "d:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\wwwroot\\sample-data\\weather.json",
+      "Id": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\wwwroot\\sample-data\\weather.json",
       "PackagePath": "staticwebassets\\sample-data\\weather.json"
     },
     {

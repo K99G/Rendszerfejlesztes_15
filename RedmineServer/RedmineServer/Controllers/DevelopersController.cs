@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using RedmineServer.Models;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class DevelopersController : ControllerBase
 {
     private readonly ApplicationDbContext _context;

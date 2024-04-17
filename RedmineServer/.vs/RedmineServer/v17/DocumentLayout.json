@@ -1,37 +1,37 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Egyetem\\Rendszerfejleszt\u00E9s\\LoginWithToken\\RedmineServer\\",
+  "WorkspaceRootPath": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineServer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}|RedmineServer\\RedmineServer.csproj|d:\\egyetem\\rendszerfejleszt\u00E9s\\loginwithtoken\\redmineserver\\redmineserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}|RedmineServer\\RedmineServer.csproj|solutionrelative:redmineserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}|RedmineServer\\RedmineServer.csproj|d:\\egyetem\\rendszerfejleszt\u00E9s\\loginwithtoken\\redmineserver\\redmineserver\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}|RedmineServer\\RedmineServer.csproj|solutionrelative:redmineserver\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}|RedmineServer\\RedmineServer.csproj|d:\\egyetem\\rendszerfejleszt\u00E9s\\loginwithtoken\\redmineserver\\redmineserver\\controllers\\managerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}|RedmineServer\\RedmineServer.csproj|solutionrelative:redmineserver\\controllers\\managerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}|RedmineServer\\RedmineServer.csproj|d:\\egyetem\\rendszerfejleszt\u00E9s\\loginwithtoken\\redmineserver\\redmineserver\\data\\applicationdbidentifier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}|RedmineServer\\RedmineServer.csproj|solutionrelative:redmineserver\\data\\applicationdbidentifier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}|RedmineServer\\RedmineServer.csproj|d:\\egyetem\\rendszerfejleszt\u00E9s\\loginwithtoken\\redmineserver\\redmineserver\\controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}|RedmineServer\\RedmineServer.csproj|solutionrelative:redmineserver\\controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}|RedmineServer\\RedmineServer.csproj|d:\\egyetem\\rendszerfejleszt\u00E9s\\loginwithtoken\\redmineserver\\redmineserver\\controllers\\developerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}|RedmineServer\\RedmineServer.csproj|solutionrelative:redmineserver\\controllers\\developerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}|RedmineServer\\RedmineServer.csproj|d:\\egyetem\\rendszerfejleszt\u00E9s\\loginwithtoken\\redmineserver\\redmineserver\\controllers\\taskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}|RedmineServer\\RedmineServer.csproj|c:\\users\\gergely\\documents\\github\\rendszerfejlesztes_15\\redmineserver\\redmineserver\\controllers\\taskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}|RedmineServer\\RedmineServer.csproj|solutionrelative:redmineserver\\controllers\\taskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}|RedmineServer\\RedmineServer.csproj|d:\\egyetem\\rendszerfejleszt\u00E9s\\loginwithtoken\\redmineserver\\redmineserver\\controllers\\accountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}|RedmineServer\\RedmineServer.csproj|c:\\users\\gergely\\documents\\github\\rendszerfejlesztes_15\\redmineserver\\redmineserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}|RedmineServer\\RedmineServer.csproj|solutionrelative:redmineserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}|RedmineServer\\RedmineServer.csproj|c:\\users\\gergely\\documents\\github\\rendszerfejlesztes_15\\redmineserver\\redmineserver\\models\\developerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}|RedmineServer\\RedmineServer.csproj|solutionrelative:redmineserver\\models\\developerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}|RedmineServer\\RedmineServer.csproj|c:\\users\\gergely\\documents\\github\\rendszerfejlesztes_15\\redmineserver\\redmineserver\\controllers\\developerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}|RedmineServer\\RedmineServer.csproj|solutionrelative:redmineserver\\controllers\\developerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}|RedmineServer\\RedmineServer.csproj|c:\\users\\gergely\\documents\\github\\rendszerfejlesztes_15\\redmineserver\\redmineserver\\controllers\\managerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}|RedmineServer\\RedmineServer.csproj|solutionrelative:redmineserver\\controllers\\managerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}|RedmineServer\\RedmineServer.csproj|c:\\users\\gergely\\documents\\github\\rendszerfejlesztes_15\\redmineserver\\redmineserver\\data\\applicationdbidentifier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}|RedmineServer\\RedmineServer.csproj|solutionrelative:redmineserver\\data\\applicationdbidentifier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}|RedmineServer\\RedmineServer.csproj|c:\\users\\gergely\\documents\\github\\rendszerfejlesztes_15\\redmineserver\\redmineserver\\controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}|RedmineServer\\RedmineServer.csproj|solutionrelative:redmineserver\\controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}|RedmineServer\\RedmineServer.csproj|c:\\users\\gergely\\documents\\github\\rendszerfejlesztes_15\\redmineserver\\redmineserver\\controllers\\accountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}|RedmineServer\\RedmineServer.csproj|solutionrelative:redmineserver\\controllers\\accountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -42,29 +42,38 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Egyetem\\Rendszerfejleszt\u00E9s\\LoginWithToken\\RedmineServer\\RedmineServer\\appsettings.json",
-              "RelativeDocumentMoniker": "RedmineServer\\appsettings.json",
-              "ToolTip": "D:\\Egyetem\\Rendszerfejleszt\u00E9s\\LoginWithToken\\RedmineServer\\RedmineServer\\appsettings.json",
-              "RelativeToolTip": "RedmineServer\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-04-16T19:04:19.282Z"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "DeveloperDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\Models\\DeveloperDTO.cs",
+              "RelativeDocumentMoniker": "RedmineServer\\Models\\DeveloperDTO.cs",
+              "ToolTip": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\Models\\DeveloperDTO.cs",
+              "RelativeToolTip": "RedmineServer\\Models\\DeveloperDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T20:24:20.078Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Egyetem\\Rendszerfejleszt\u00E9s\\LoginWithToken\\RedmineServer\\RedmineServer\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\Program.cs",
               "RelativeDocumentMoniker": "RedmineServer\\Program.cs",
-              "ToolTip": "D:\\Egyetem\\Rendszerfejleszt\u00E9s\\LoginWithToken\\RedmineServer\\RedmineServer\\Program.cs",
+              "ToolTip": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\Program.cs",
               "RelativeToolTip": "RedmineServer\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAhAAAA",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAAAAoAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-16T09:44:29.046Z",
               "EditorCaption": ""
@@ -73,9 +82,9 @@
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "AccountsController.cs",
-              "DocumentMoniker": "D:\\Egyetem\\Rendszerfejleszt\u00E9s\\LoginWithToken\\RedmineServer\\RedmineServer\\Controllers\\AccountsController.cs",
+              "DocumentMoniker": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\Controllers\\AccountsController.cs",
               "RelativeDocumentMoniker": "RedmineServer\\Controllers\\AccountsController.cs",
-              "ToolTip": "D:\\Egyetem\\Rendszerfejleszt\u00E9s\\LoginWithToken\\RedmineServer\\RedmineServer\\Controllers\\AccountsController.cs",
+              "ToolTip": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\Controllers\\AccountsController.cs",
               "RelativeToolTip": "RedmineServer\\Controllers\\AccountsController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACgAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -83,35 +92,37 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "TasksController.cs",
-              "DocumentMoniker": "D:\\Egyetem\\Rendszerfejleszt\u00E9s\\LoginWithToken\\RedmineServer\\RedmineServer\\Controllers\\TasksController.cs",
+              "DocumentMoniker": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\Controllers\\TasksController.cs",
               "RelativeDocumentMoniker": "RedmineServer\\Controllers\\TasksController.cs",
-              "ToolTip": "D:\\Egyetem\\Rendszerfejleszt\u00E9s\\LoginWithToken\\RedmineServer\\RedmineServer\\Controllers\\TasksController.cs",
+              "ToolTip": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\Controllers\\TasksController.cs",
               "RelativeToolTip": "RedmineServer\\Controllers\\TasksController.cs",
-              "ViewState": "AQIAAGsAAAAAAAAAAAAIwAAAAAAAAAAA",
+              "ViewState": "AQIAAHkAAAAAAAAAAAAcwIwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-10T20:46:58.032Z"
+              "WhenOpened": "2024-04-10T20:46:58.032Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "DevelopersController.cs",
-              "DocumentMoniker": "D:\\Egyetem\\Rendszerfejleszt\u00E9s\\LoginWithToken\\RedmineServer\\RedmineServer\\Controllers\\DevelopersController.cs",
+              "DocumentMoniker": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\Controllers\\DevelopersController.cs",
               "RelativeDocumentMoniker": "RedmineServer\\Controllers\\DevelopersController.cs",
-              "ToolTip": "D:\\Egyetem\\Rendszerfejleszt\u00E9s\\LoginWithToken\\RedmineServer\\RedmineServer\\Controllers\\DevelopersController.cs",
+              "ToolTip": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\Controllers\\DevelopersController.cs",
               "RelativeToolTip": "RedmineServer\\Controllers\\DevelopersController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-10T17:43:25.74Z"
+              "WhenOpened": "2024-04-10T17:43:25.74Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "ProjectsController.cs",
-              "DocumentMoniker": "D:\\Egyetem\\Rendszerfejleszt\u00E9s\\LoginWithToken\\RedmineServer\\RedmineServer\\Controllers\\ProjectsController.cs",
+              "DocumentMoniker": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\Controllers\\ProjectsController.cs",
               "RelativeDocumentMoniker": "RedmineServer\\Controllers\\ProjectsController.cs",
-              "ToolTip": "D:\\Egyetem\\Rendszerfejleszt\u00E9s\\LoginWithToken\\RedmineServer\\RedmineServer\\Controllers\\ProjectsController.cs",
+              "ToolTip": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\Controllers\\ProjectsController.cs",
               "RelativeToolTip": "RedmineServer\\Controllers\\ProjectsController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -119,11 +130,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "ApplicationDbIdentifier.cs",
-              "DocumentMoniker": "D:\\Egyetem\\Rendszerfejleszt\u00E9s\\LoginWithToken\\RedmineServer\\RedmineServer\\Data\\ApplicationDbIdentifier.cs",
+              "DocumentMoniker": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\Data\\ApplicationDbIdentifier.cs",
               "RelativeDocumentMoniker": "RedmineServer\\Data\\ApplicationDbIdentifier.cs",
-              "ToolTip": "D:\\Egyetem\\Rendszerfejleszt\u00E9s\\LoginWithToken\\RedmineServer\\RedmineServer\\Data\\ApplicationDbIdentifier.cs",
+              "ToolTip": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\Data\\ApplicationDbIdentifier.cs",
               "RelativeToolTip": "RedmineServer\\Data\\ApplicationDbIdentifier.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -131,11 +142,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "ManagersController.cs",
-              "DocumentMoniker": "D:\\Egyetem\\Rendszerfejleszt\u00E9s\\LoginWithToken\\RedmineServer\\RedmineServer\\Controllers\\ManagersController.cs",
+              "DocumentMoniker": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\Controllers\\ManagersController.cs",
               "RelativeDocumentMoniker": "RedmineServer\\Controllers\\ManagersController.cs",
-              "ToolTip": "D:\\Egyetem\\Rendszerfejleszt\u00E9s\\LoginWithToken\\RedmineServer\\RedmineServer\\Controllers\\ManagersController.cs",
+              "ToolTip": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\Controllers\\ManagersController.cs",
               "RelativeToolTip": "RedmineServer\\Controllers\\ManagersController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

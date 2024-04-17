@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\RedmineServer.csproj": {}
+    "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\RedmineServer.csproj": {}
   },
   "projects": {
-    "D:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\RedmineServer.csproj": {
+    "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\RedmineServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\RedmineServer.csproj",
+        "projectUniqueName": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\RedmineServer.csproj",
         "projectName": "RedmineServer",
-        "projectPath": "D:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\RedmineServer.csproj",
-        "packagesPath": "C:\\Users\\crowd\\.nuget\\packages\\",
-        "outputPath": "D:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\obj\\",
+        "projectPath": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\RedmineServer.csproj",
+        "packagesPath": "C:\\Users\\Gergely\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "D:\\shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\crowd\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Gergely\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

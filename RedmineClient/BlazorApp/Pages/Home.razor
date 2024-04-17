@@ -20,17 +20,14 @@ else if(currentState == ComponentState.Error)
 {
     <p><em>@errorMessage</em></p>
 }
-else if(currentState == ComponentState.Loaded)
-{
-    <p>Data loaded successfully!</p>
 
-}
 else if (currentState == ComponentState.Unauthorized)
 {
     <p>You do not have permission to view this data.</p>
 }
-else
+else if (currentState == ComponentState.Loaded)
 {
+    <p>Data loaded successfully!</p>
     <div>
     <h2>Managers</h2>
     @if (managers == null || managers.Length == 0)
@@ -168,6 +165,7 @@ else
     <div>
     
         <div>
+            <h3>Add task</h3>
         <label for="manager">Manager:</label>
         <select @bind="newTask.UserId" id="manager">
         <option value="">-- Select a Manager --</option>
@@ -175,7 +173,8 @@ else
         {
             @for (int i = 0; i < managers.Length; i++)
             {
-            <option value="@i">@managers[i].Name (@managers[i].Email)</option>
+                        var optionvalue = i + 1;
+                        <option value="@optionvalue">@managers[i].Name (@managers[i].Email)</option>
             }
         }
         else
@@ -211,9 +210,15 @@ else
         </div>
         <div>
             <label for="developer">Developer:</label>
-            <select id="developer">
+            <select id="developer" @bind="newTask.Developer">
                 <option value="">-- Select a Developer --</option>
-                <!-- Future implementation -->
+                @if (developers != null && developers.Length > 0)
+                {
+                    @foreach (var dev in developers)
+                    {
+                        <option value="@dev.Name">@dev.Name</option>
+                    }
+                }
             </select>
         </div>
         <button type="button" @onclick="HandleValidSubmit">Submit Task</button>
@@ -236,7 +241,7 @@ else
         Error,
         Unauthorized
     }
-    
+
     private string? token;
     private string? secureData;
     private string? errorMessage;
@@ -247,12 +252,14 @@ else
     private ManagerModel[]? managers;
     private ProjectModel[]? projects;
     private TaskModel[]? tasks, projectTasks, managerTasks;
+    private DeveloperModel[]? developers;
     private TaskModel newTask = new TaskModel();
+
 
     protected override async Task OnInitializedAsync()
     {
-         ClearError();
-        await TokenValidate();
+        ClearError();
+        //await TokenValidate();
 
         // Only proceed to load data if the user is authorized
         if (currentState != ComponentState.Unauthorized) {
@@ -263,35 +270,35 @@ else
     // Validate the current user
     private async Task TokenValidate()
     {
-    // retrieve the token from user
-    var token = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "token"); // Note the key 'token' in login page
-    if (string.IsNullOrEmpty(token))
-    {
-        currentState = ComponentState.Unauthorized;
-        return;
-    }
-    // Authorization request from server
-    Http.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("BearerDefault", token);
-    try
-    {
-        var response = await Http.GetAsync("api/secure-data");
-        if (response.IsSuccessStatusCode)
-        {
-            secureData = await response.Content.ReadAsStringAsync();
-            currentState = ComponentState.Loaded;
-        }
-        else
+        // retrieve the token from user
+        var token = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "token"); // Note the key 'token' in login page
+        if (string.IsNullOrEmpty(token))
         {
             currentState = ComponentState.Unauthorized;
-            errorMessage = "Unauthorized access.";
+            return;
+        }
+        // Authorization request from server
+        Http.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("BearerDefault", token);
+        try
+        {
+            var response = await Http.GetAsync("api/secure-data");
+            if (response.IsSuccessStatusCode)
+            {
+                secureData = await response.Content.ReadAsStringAsync();
+                currentState = ComponentState.Loaded;
+            }
+            else
+            {
+                currentState = ComponentState.Unauthorized;
+                errorMessage = "Unauthorized access.";
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Error validating token: {ex.Message}";
+            SetError(ex);
         }
     }
-    catch (Exception ex)
-    {
-        errorMessage = $"Error validating token: {ex.Message}";
-        SetError(ex);
-    }
-}
 
     private async Task LoadData() {
         try 
@@ -299,6 +306,7 @@ else
             managers = await Http.GetFromJsonAsync<ManagerModel[]>("api/Managers");
             projects = await Http.GetFromJsonAsync<ProjectModel[]>("api/Projects");
             tasks = await Http.GetFromJsonAsync<TaskModel[]>("api/Tasks");
+            developers = await Http.GetFromJsonAsync<DeveloperModel[]>("api/Developers");
             currentState = ComponentState.Loaded; // Set state to Loaded on success
         } catch (Exception ex) {
             errorMessage = $"Error fetching data: {ex.Message}";

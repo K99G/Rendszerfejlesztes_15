@@ -1,12 +1,113 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Egyetem\\Rendszerfejleszt\u00E9s\\LoginWithToken\\RedmineClient\\BlazorApp\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A24CB9BC-8F6B-4E76-BC1D-5B2527D5854C}|BlazorApp.csproj|c:\\users\\gergely\\documents\\github\\rendszerfejlesztes_15\\redmineclient\\blazorapp\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A24CB9BC-8F6B-4E76-BC1D-5B2527D5854C}|BlazorApp.csproj|solutionrelative:layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A24CB9BC-8F6B-4E76-BC1D-5B2527D5854C}|BlazorApp.csproj|c:\\users\\gergely\\documents\\github\\rendszerfejlesztes_15\\redmineclient\\blazorapp\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A24CB9BC-8F6B-4E76-BC1D-5B2527D5854C}|BlazorApp.csproj|solutionrelative:pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A24CB9BC-8F6B-4E76-BC1D-5B2527D5854C}|BlazorApp.csproj|c:\\users\\gergely\\documents\\github\\rendszerfejlesztes_15\\redmineclient\\blazorapp\\models\\taskmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A24CB9BC-8F6B-4E76-BC1D-5B2527D5854C}|BlazorApp.csproj|solutionrelative:models\\taskmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A24CB9BC-8F6B-4E76-BC1D-5B2527D5854C}|BlazorApp.csproj|c:\\users\\gergely\\documents\\github\\rendszerfejlesztes_15\\redmineclient\\blazorapp\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A24CB9BC-8F6B-4E76-BC1D-5B2527D5854C}|BlazorApp.csproj|solutionrelative:pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A24CB9BC-8F6B-4E76-BC1D-5B2527D5854C}|BlazorApp.csproj|c:\\users\\gergely\\documents\\github\\rendszerfejlesztes_15\\redmineclient\\blazorapp\\models\\developermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A24CB9BC-8F6B-4E76-BC1D-5B2527D5854C}|BlazorApp.csproj|solutionrelative:models\\developermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "Layout\\NavMenu.razor",
+              "ToolTip": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "Layout\\NavMenu.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-17T21:19:09.416Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TaskModel.cs",
+              "DocumentMoniker": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\Models\\TaskModel.cs",
+              "RelativeDocumentMoniker": "Models\\TaskModel.cs",
+              "ToolTip": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\Models\\TaskModel.cs",
+              "RelativeToolTip": "Models\\TaskModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T20:33:10.063Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DeveloperModel.cs",
+              "DocumentMoniker": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\Models\\DeveloperModel.cs",
+              "RelativeDocumentMoniker": "Models\\DeveloperModel.cs",
+              "ToolTip": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\Models\\DeveloperModel.cs",
+              "RelativeToolTip": "Models\\DeveloperModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T20:24:00.727Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Login.razor",
+              "DocumentMoniker": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\Pages\\Login.razor",
+              "RelativeDocumentMoniker": "Pages\\Login.razor",
+              "ToolTip": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\Pages\\Login.razor",
+              "RelativeToolTip": "Pages\\Login.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-17T18:54:48.773Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\Pages\\Home.razor",
+              "RelativeToolTip": "Pages\\Home.razor",
+              "ViewState": "AQIAAJoAAAAAAAAAAADwv7AAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-17T18:32:44.861Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
