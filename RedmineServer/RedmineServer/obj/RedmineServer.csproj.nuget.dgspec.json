@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Egyetem\\Rendszerfejlesztés\\LoginWithToken\\RedmineServer\\RedmineServer\\RedmineServer.csproj": {}
+    "D:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\RedmineServer.csproj": {}
   },
   "projects": {
-    "D:\\Egyetem\\Rendszerfejlesztés\\LoginWithToken\\RedmineServer\\RedmineServer\\RedmineServer.csproj": {
+    "D:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\RedmineServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Egyetem\\Rendszerfejlesztés\\LoginWithToken\\RedmineServer\\RedmineServer\\RedmineServer.csproj",
+        "projectUniqueName": "D:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\RedmineServer.csproj",
         "projectName": "RedmineServer",
-        "projectPath": "D:\\Egyetem\\Rendszerfejlesztés\\LoginWithToken\\RedmineServer\\RedmineServer\\RedmineServer.csproj",
-        "packagesPath": "C:\\Users\\SH3NKI\\.nuget\\packages\\",
-        "outputPath": "D:\\Egyetem\\Rendszerfejlesztés\\LoginWithToken\\RedmineServer\\RedmineServer\\obj\\",
+        "projectPath": "D:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\RedmineServer.csproj",
+        "packagesPath": "C:\\Users\\crowd\\.nuget\\packages\\",
+        "outputPath": "D:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "D:\\shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\SH3NKI\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\crowd\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -49,6 +49,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.3, )"
@@ -93,7 +101,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

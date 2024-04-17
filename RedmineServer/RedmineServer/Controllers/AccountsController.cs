@@ -78,5 +78,43 @@ public class AccountController : ControllerBase
         return new JwtSecurityTokenHandler().WriteToken(token);
     }
 
+    
+    /* auto user validation
+    [HttpGet("secure-data")]
+    public IActionResult GetSecureData()
+    {
+        if (User.Identity.IsAuthenticated)
+        {
+            var userEmail = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
+            return Ok($"This is secure data available to {userEmail}");
+        }
+        return Unauthorized("You need to be logged in.");
+    } */
 
+    //manual validation
+    [HttpGet("validate-token")]
+    public IActionResult ValidateToken(string token)
+    {
+        var tokenHandler = new JwtSecurityTokenHandler();
+        var validationParameters = new TokenValidationParameters
+        {
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"])),
+            ValidateIssuer = true,
+            ValidIssuer = _configuration["Jwt:Issuer"],
+            ValidateAudience = true,
+            ValidAudience = _configuration["Jwt:Audience"],
+            ValidateLifetime = true,
+            ClockSkew = TimeSpan.Zero
+        };
+        try
+        {
+            var principal = tokenHandler.ValidateToken(token, validationParameters, out SecurityToken validatedToken);
+            return Ok(principal);
+        }
+        catch (Exception ex)
+        {
+            return Unauthorized($"Invalid token: {ex.Message}");
+        }
+    } 
 }

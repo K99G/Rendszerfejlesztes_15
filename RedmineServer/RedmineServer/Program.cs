@@ -1,15 +1,19 @@
-using Microsoft.AspNetCore.Components.Authorization;
+using System.Text;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.HttpOverrides;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddHttpClient();
-builder.Services.AddControllers(options => options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true);
+builder.Services.AddControllers(options => 
+options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+builder.Services.AddResponseCompression();
 
 // Add CORS policy
 builder.Services.AddCors(options =>
@@ -26,7 +30,29 @@ builder.Services.AddCors(options =>
 // Configure DbContext with MySQL provider
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("ConnectionString"), 
-    new MariaDbServerVersion(new Version(10, 4, 32))));
+    new MariaDbServerVersion(new Version(10, 4, 32)))
+    );
+
+/* Add Token Authentication 
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])),
+        ValidateIssuer = true,
+        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+        ValidateAudience = true,
+        ValidAudience = builder.Configuration["Jwt:Audience"],
+        ValidateLifetime = true,
+        ClockSkew = TimeSpan.Zero  // for immediate token expiration handling
+    };
+}); */
 
 var app = builder.Build();
 
@@ -52,6 +78,10 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.UseDeveloperExceptionPage(); // Use developer exception page to see detailed errors
+}
+else {  
+    app.UseHttpsRedirection(); 
 }
 
 if (!app.Environment.IsDevelopment())
@@ -60,9 +90,10 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseRouting(); // Enable routing if using endpoints directly.
-
 app.UseCors("BlazorPolicy");
 
+// Configures the HTTP request pipeline to use authentication & authorization.
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

@@ -20,7 +20,7 @@ namespace RedmineServer.Controllers
             _context = context;
         }
 
-        // HTTP GET method to retrieve all developers.
+        // HTTP GET method to retrieve all projectdevelopers.
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ProjectDeveloperDTO>>> GetProjectDevelopers()
         {

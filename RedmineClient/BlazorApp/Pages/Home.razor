@@ -2,9 +2,13 @@
 
 @using BlazorApp.Models
 @using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.JSInterop
+@using System.Net
 
 @inject HttpClient Http
-
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
 
 <PageTitle>Home</PageTitle>
 
@@ -21,6 +25,12 @@ else if(currentState == ComponentState.Loaded)
     <p>Data loaded successfully!</p>
 
 }
+else if (currentState == ComponentState.Unauthorized)
+{
+    <p>You do not have permission to view this data.</p>
+}
+else
+{
     <div>
     <h2>Managers</h2>
     @if (managers == null || managers.Length == 0)
@@ -209,14 +219,13 @@ else if(currentState == ComponentState.Loaded)
         <button type="button" @onclick="HandleValidSubmit">Submit Task</button>
     </div>
 
-@if (!string.IsNullOrEmpty(message))
-{
-    <div class="alert @(message.StartsWith("Task created successfully") ? "alert-success" : "alert-danger")">
-        @message
-    </div>
+    @if (!string.IsNullOrEmpty(message))
+    {
+        <div class="alert @(message.StartsWith("Task created successfully") ? "alert-success" : "alert-danger")">
+            @message
+        </div>
+    }
 }
-
-
 
 @code {
 
@@ -224,13 +233,15 @@ else if(currentState == ComponentState.Loaded)
     {
         Loading,
         Loaded,
-        Error
+        Error,
+        Unauthorized
     }
     
+    private string? token;
+    private string? secureData;
     private string? errorMessage;
     private string? message;
     private ComponentState currentState = ComponentState.Loading;
-    //private bool loading;
 
     private int taskId, managerId, projectId;
     private ManagerModel[]? managers;
@@ -238,31 +249,63 @@ else if(currentState == ComponentState.Loaded)
     private TaskModel[]? tasks, projectTasks, managerTasks;
     private TaskModel newTask = new TaskModel();
 
-
-
-
     protected override async Task OnInitializedAsync()
     {
- 
-        currentState = ComponentState.Loading; //loading state is set before fetching
-        ClearError();
-        // loading = true;
-        
-        try
+         ClearError();
+        await TokenValidate();
+
+        // Only proceed to load data if the user is authorized
+        if (currentState != ComponentState.Unauthorized) {
+            await LoadData();
+        }
+    }
+
+    // Validate the current user
+    private async Task TokenValidate()
+    {
+    // retrieve the token from user
+    var token = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "token"); // Note the key 'token' in login page
+    if (string.IsNullOrEmpty(token))
+    {
+        currentState = ComponentState.Unauthorized;
+        return;
+    }
+    // Authorization request from server
+    Http.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("BearerDefault", token);
+    try
+    {
+        var response = await Http.GetAsync("api/secure-data");
+        if (response.IsSuccessStatusCode)
         {
-            // Fetch data from APIs
+            secureData = await response.Content.ReadAsStringAsync();
+            currentState = ComponentState.Loaded;
+        }
+        else
+        {
+            currentState = ComponentState.Unauthorized;
+            errorMessage = "Unauthorized access.";
+        }
+    }
+    catch (Exception ex)
+    {
+        errorMessage = $"Error validating token: {ex.Message}";
+        SetError(ex);
+    }
+}
+
+    private async Task LoadData() {
+        try 
+        {
             managers = await Http.GetFromJsonAsync<ManagerModel[]>("api/Managers");
             projects = await Http.GetFromJsonAsync<ProjectModel[]>("api/Projects");
-            tasks = await Http.GetFromJsonAsync<TaskModel[]>("api/Tasks");       
+            tasks = await Http.GetFromJsonAsync<TaskModel[]>("api/Tasks");
             currentState = ComponentState.Loaded; // Set state to Loaded on success
-        }
-        catch (Exception ex)
-        {
+        } catch (Exception ex) {
             errorMessage = $"Error fetching data: {ex.Message}";
             SetError(ex);
         }
-        
     }
+    // Submit tasks to API
     private async Task HandleValidSubmit()
     {
         var response = await Http.PostAsJsonAsync("api/Tasks", newTask);
@@ -274,8 +317,7 @@ else if(currentState == ComponentState.Loaded)
                 if (createdTask != null)
                 {
                     message = "Task created successfully!: " + createdTask;
-                    // Reset the form
-                    newTask = new TaskModel();
+                    newTask = new TaskModel(); // For another task
                }
             }           
             else
@@ -289,8 +331,7 @@ else if(currentState == ComponentState.Loaded)
             SetError(ex);
         }
     }
-
-    // Retrieve data from APIs By Id
+    // Fetch data from APIs By Id
     private async Task SearchTask()
     {
         ClearError();
@@ -310,14 +351,14 @@ else if(currentState == ComponentState.Loaded)
         catch (Exception ex) { errorMessage = $"Error searching for project by ID: {ex.Message}"; SetError(ex); }
     }
 
-    // Method to search tasks by projectID
+    // Search tasks by projectID
     private async Task SearchTasksByProjectId()
     {
         ClearError();
         try { projectTasks = await Http.GetFromJsonAsync<TaskModel[]>($"api/Tasks/project/{projectId}"); }
         catch (Exception ex) { errorMessage = $"Error searching for tasks by project ID: {ex.Message}"; SetError(ex); }
     }
-    // Method to search tasks by managerID
+    // Search tasks by managerID
     private async Task SearchTasksByManagerId()
     {
         ClearError();
@@ -325,16 +366,16 @@ else if(currentState == ComponentState.Loaded)
         catch (Exception ex) { errorMessage = $"Error searching for tasks by manager ID: {ex.Message}"; SetError(ex); }
     }
 
-
+    // Cleaner
     private void ClearError()
     {
       errorMessage = null; currentState = ComponentState.Loaded; 
     }
     private void SetError(Exception ex) 
     {
-        errorMessage = ex.Message;
-        // Update the component state to indicate an error has occurred.
+        // Update the component state and message of error.
         currentState = ComponentState.Error;
+        errorMessage = ex.Message;
         // Log the error to the console for debugging purposes.
         Console.WriteLine("Error: " + errorMessage);
         
