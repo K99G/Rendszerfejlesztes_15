@@ -25,9 +25,8 @@ A rendszer két fő komponensre oszlik:
 
 **Adatbázis Konfiguráció**
 
-    A MariaDB adatbázis az Entity Framework Core használatával,
-    a Pomelo Entity Framework Core MySQL provider segítségével érhető el.
-    Az ApplicationDbContext osztály MySQL-t használ MariaDB kompatibilitással.
+    Az SQK adatbázist Entity Framework Core használatával érjük el, MariaDB kompatibilitással,
+    Az ApplicationDbIdentifier/ApplicationDbContext osztály a értelmezi és kezeli SQL adatbázist adatait.
 
 **Adatbázis Séma**
 Az adatbázis a következő entitásokból áll:
