@@ -275,13 +275,15 @@ else if (currentState == ComponentState.Loaded)
         if (string.IsNullOrEmpty(token))
         {
             currentState = ComponentState.Unauthorized;
+            errorMessage = "can't access to local storage";
+            Console.WriteLine("Error: " + errorMessage);
             return;
         }
         // Authorization request from server
-        Http.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("BearerDefault", token);
+        Http.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
         try
         {
-            var response = await Http.GetAsync("api/secure-data");
+            var response = await Http.GetAsync("api/Account/validate-token?token=");
             if (response.IsSuccessStatusCode)
             {
                 secureData = await response.Content.ReadAsStringAsync();

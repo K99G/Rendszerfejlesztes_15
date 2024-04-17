@@ -92,7 +92,7 @@ public class AccountController : ControllerBase
     } */
 
     //manual validation
-    [HttpGet("validate-token")]
+      [HttpGet("validate-token")]
     public IActionResult ValidateToken(string token)
     {
         var tokenHandler = new JwtSecurityTokenHandler();
@@ -110,11 +110,36 @@ public class AccountController : ControllerBase
         try
         {
             var principal = tokenHandler.ValidateToken(token, validationParameters, out SecurityToken validatedToken);
-            return Ok(principal);
+
+            // Extract a specific claim, e.g., user's email or a user identifier
+            var userClaim = principal.Claims.FirstOrDefault(c => c.Type == JwtRegisteredClaimNames.Jti)?.Value;
+            if (userClaim == null)
+            {
+                Console.WriteLine("Claims present in the token:");
+                foreach (var claim in principal.Claims)
+                {
+                Console.WriteLine($"Type: {claim.Type}, Value: {claim.Value}");
+                }   
+                return Unauthorized("Token is valid but does not contain the expected claim.");
+            }
+            // Construct a success message
+            var successMessage = $"Token is valid for user: {userClaim}";
+            return Ok( new { Message = successMessage });
+
+        }
+        // authorization exceptions
+        catch (SecurityTokenExpiredException)
+        {
+            return Unauthorized("Token has expired.");
+        }
+        catch (SecurityTokenValidationException stvex)
+        {
+            return Unauthorized($"Token validation failed: {stvex.Message}");
         }
         catch (Exception ex)
         {
             return Unauthorized($"Invalid token: {ex.Message}");
         }
     } 
+
 }
