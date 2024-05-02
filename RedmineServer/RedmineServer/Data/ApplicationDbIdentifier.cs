@@ -6,6 +6,7 @@ public class Manager
     public string Name { get; set; }
     public string Email { get; set; }
     public string Password { get; set; }
+    public string Role { get; set; }
     public ICollection<Task> Tasks { get; set; } // Collection of tasks assigned to the manager
 }
 

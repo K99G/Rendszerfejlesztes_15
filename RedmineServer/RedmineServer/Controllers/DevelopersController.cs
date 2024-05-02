@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RedmineServer.Models;
@@ -16,7 +17,7 @@ public class DevelopersController : ControllerBase
     {
         _context = context;
     }
-
+    [Authorize]
     [HttpGet]
     public async Task<ActionResult<IEnumerable<DeveloperDTO>>> GetDevelopers()
     {

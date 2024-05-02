@@ -3,8 +3,10 @@
 @using BlazorApp.Models
 @using Microsoft.AspNetCore.Components.Forms
 @using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
 @using Microsoft.JSInterop
 @using System.Net
+@using System.Net.Http.Headers
 
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
@@ -234,6 +236,7 @@ else if (currentState == ComponentState.Loaded)
 
 @code {
 
+
     public enum ComponentState
     {
         Loading,
@@ -255,11 +258,19 @@ else if (currentState == ComponentState.Loaded)
     private DeveloperModel[]? developers;
     private TaskModel newTask = new TaskModel();
 
+    public class Token
+    {
+        public string token { get; set; }
+    }
+
 
     protected override async Task OnInitializedAsync()
     {
+
+        var jwtToken = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "token");
+        Http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", jwtToken);
         ClearError();
-        //await TokenValidate();
+        //sawait TokenValidate();
 
         // Only proceed to load data if the user is authorized
         if (currentState != ComponentState.Unauthorized) {
@@ -280,10 +291,12 @@ else if (currentState == ComponentState.Loaded)
             return;
         }
         // Authorization request from server
+        Console.WriteLine(token.ToString());
         Http.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
         try
         {
-            var response = await Http.GetAsync("api/Account/validate-token?token=");
+
+            var response = await Http.PostAsJsonAsync("http://localhost:5300/Account/validate",token);
             if (response.IsSuccessStatusCode)
             {
                 secureData = await response.Content.ReadAsStringAsync();
@@ -292,7 +305,7 @@ else if (currentState == ComponentState.Loaded)
             else
             {
                 currentState = ComponentState.Unauthorized;
-                errorMessage = "Unauthorized access.";
+                errorMessage = response.ToString();
             }
         }
         catch (Exception ex)
@@ -328,9 +341,13 @@ else if (currentState == ComponentState.Loaded)
                 {
                     message = "Task created successfully!: " + createdTask;
                     newTask = new TaskModel(); // For another task
-               }
+                }
             }           
-            else
+            else if((int)response.StatusCode==505)
+            {
+                message = "You do not have permission to create tasks.";
+            }
+            else 
             {
                 message = "Task created but the response was not understood.";
             }

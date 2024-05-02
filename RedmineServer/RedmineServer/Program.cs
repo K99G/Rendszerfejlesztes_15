@@ -33,7 +33,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     new MariaDbServerVersion(new Version(10, 4, 32)))
     );
 
-/* Add Token Authentication 
+// Add Token Authentication 
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -52,7 +52,7 @@ builder.Services.AddAuthentication(options =>
         ValidateLifetime = true,
         ClockSkew = TimeSpan.Zero  // for immediate token expiration handling
     };
-}); */
+}); 
 
 var app = builder.Build();
 

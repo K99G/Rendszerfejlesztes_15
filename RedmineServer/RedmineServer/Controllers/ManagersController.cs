@@ -3,6 +3,7 @@ using RedmineServer.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace RedmineServer.Controllers
 {
@@ -18,13 +19,14 @@ namespace RedmineServer.Controllers
         }
 
         // Retrieves all managers as ManagerDTO objects.
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ManagerDTO>>> GetManagers()
         {
             try
             {
                 var managers = await _context.Managers
-                    .Select(m => new ManagerDTO { Email = m.Email, Name = m.Name, Password = m.Password })
+                    .Select(m => new ManagerDTO { Email = m.Email, Name = m.Name, Password = m.Password , Role=m.Role})
                     .ToListAsync();
 
                 return Ok(managers);
@@ -35,14 +37,14 @@ namespace RedmineServer.Controllers
                 return StatusCode(500, "Error accessing database");
             }
         }
-    
-    [HttpGet("{id}")]
+        [Authorize]
+        [HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<ManagerDTO>>> GetManagersId(int id)
         {
             try
             {
                     var managers = await _context.Managers.Where(x=>x.Id==id)
-                        .Select(m => new ManagerDTO { Email = m.Email, Name = m.Name, Password = m.Password })
+                        .Select(m => new ManagerDTO { Email = m.Email, Name = m.Name, Password = m.Password, Role = m.Role  })
                         .ToListAsync();
 
                     return Ok(managers);

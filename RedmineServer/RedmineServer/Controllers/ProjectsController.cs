@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RedmineServer.Models;
@@ -18,6 +19,7 @@ namespace RedmineServer.Controllers
         }
 
         // HTTP GET method to retrieve all projects.
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ProjectDTO>>> GetProjects()
         {
@@ -44,7 +46,8 @@ namespace RedmineServer.Controllers
                 return StatusCode(500, "Error accessing database");
             }
         }
-         [HttpGet("{id}")]
+        [Authorize]
+        [HttpGet("{id}")]
          public async Task<ActionResult<IEnumerable<ProjectDTO>>> GetProjectsByTypeId(int id)
         {
             try

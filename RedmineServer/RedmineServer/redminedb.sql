@@ -53,18 +53,20 @@ CREATE TABLE `managers` (
   `id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL
+  `password` varchar(255) DEFAULT NULL,
+  `role` varchar(255) DEFAULT NULL
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- A tábla adatainak kiíratása `managers`
 --
 
-INSERT INTO `managers` (`id`, `name`, `email`, `password`) VALUES
-(1, 'John Doe', 'johndoe@example.com', 'securepassword123'),
-(2, 'Jane Smith', 'janesmith@example.com', 'securepassword456'),
-(3, 'Alex Johnson', 'alexj@example.com', 'password789'),
-(4, 'Samantha Ray', 'samanthar@example.com', 'password012');
+INSERT INTO `managers` (`id`, `name`, `email`, `password`, `role`) VALUES
+(1, 'John Doe', 'johndoe@example.com', 'securepassword123', 'admin'),
+(2, 'Jane Smith', 'janesmith@example.com', 'securepassword456', 'user'),
+(3, 'Alex Johnson', 'alexj@example.com', 'password789', 'user'),
+(4, 'Samantha Ray', 'samanthar@example.com', 'password012', 'user');
 
 -- --------------------------------------------------------
 

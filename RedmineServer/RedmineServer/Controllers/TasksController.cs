@@ -1,7 +1,10 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RedmineServer.Models;
 using System.Collections.Generic;
+using System.Data;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace RedmineServer.Controllers
@@ -18,6 +21,8 @@ namespace RedmineServer.Controllers
         }
 
         // HTTP GET method to retrieve all tasks.
+
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TaskDTO>>> GetTasks()
         {
@@ -48,6 +53,7 @@ namespace RedmineServer.Controllers
                 return StatusCode(500, "Error accessing database");
             }
         }
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<TaskDTO>>> GetTask(int id)
         {
@@ -81,6 +87,7 @@ namespace RedmineServer.Controllers
         }
 
         // project alapján taskokat keres
+        [Authorize]
         [HttpGet("project/{id}")]
         public async Task<ActionResult<IEnumerable<TaskDTO>>> GetTaskByProject(int id)
         {
@@ -105,6 +112,7 @@ namespace RedmineServer.Controllers
         }
 
         // manager alapján taskokat keres
+        [Authorize]
         [HttpGet("manager/{id}")]
         public async Task<ActionResult<IEnumerable<TaskDTO>>> GetTaskByManager(int id)
         {
@@ -127,9 +135,23 @@ namespace RedmineServer.Controllers
             return Ok(tasks);
         }
         // taskot hozzáadni
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> PostTodoItem(TaskDTO taskDTO)
         {
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            if (identity != null)
+            {
+                var email = identity.Claims.First().Value;
+                var role = await _context.Managers.Where(t => t.Email == email).Select(t => t.Role).FirstOrDefaultAsync();
+                if (role != "admin")
+                {
+                    return StatusCode(505, "You have no access to this action.");
+                }
+            }
+            else
+                return StatusCode(506, "You have no identity.");
+
             var developerID = _context.Developers.Where(p => p.Name == taskDTO.Developer).FirstOrDefault().Id;
             //var userID = _context.Managers.Where(m => m.Name == taskDTO.Name).FirstOrDefault().Id;
             //var projectID = _context.Projects.Where(p => p.Name == taskDTO.ProjectName).FirstOrDefault().Id;

@@ -3106,3 +3106,13 @@ C:\Users\Gergely\Documents\GitHub\Rendszerfejlesztes_15\RedmineClient\BlazorApp\
 C:\Users\Gergely\Documents\GitHub\Rendszerfejlesztes_15\RedmineClient\BlazorApp\obj\Debug\net8.0\refint\BlazorApp.dll
 C:\Users\Gergely\Documents\GitHub\Rendszerfejlesztes_15\RedmineClient\BlazorApp\obj\Debug\net8.0\BlazorApp.pdb
 C:\Users\Gergely\Documents\GitHub\Rendszerfejlesztes_15\RedmineClient\BlazorApp\obj\Debug\net8.0\ref\BlazorApp.dll
+C:\Users\Gergely\Documents\GitHub\Rendszerfejlesztes_15\RedmineClient\BlazorApp\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Authorization.wasm
+C:\Users\Gergely\Documents\GitHub\Rendszerfejlesztes_15\RedmineClient\BlazorApp\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.Components.WebAssembly.Authentication.wasm
+C:\Users\Gergely\Documents\GitHub\Rendszerfejlesztes_15\RedmineClient\BlazorApp\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Authorization.wasm.gz
+C:\Users\Gergely\Documents\GitHub\Rendszerfejlesztes_15\RedmineClient\BlazorApp\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.Components.WebAssembly.Authentication.wasm.gz
+C:\Users\Gergely\Documents\GitHub\Rendszerfejlesztes_15\RedmineClient\BlazorApp\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Authorization.dll
+C:\Users\Gergely\Documents\GitHub\Rendszerfejlesztes_15\RedmineClient\BlazorApp\bin\Debug\net8.0\Microsoft.AspNetCore.Components.WebAssembly.Authentication.dll
+C:\Users\Gergely\Documents\GitHub\Rendszerfejlesztes_15\RedmineClient\BlazorApp\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.Components.Authorization.wasm
+C:\Users\Gergely\Documents\GitHub\Rendszerfejlesztes_15\RedmineClient\BlazorApp\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.Components.WebAssembly.Authentication.wasm
+C:\Users\Gergely\Documents\GitHub\Rendszerfejlesztes_15\RedmineClient\BlazorApp\obj\Debug\net8.0\compressed\32379a34ni.gz
+C:\Users\Gergely\Documents\GitHub\Rendszerfejlesztes_15\RedmineClient\BlazorApp\obj\Debug\net8.0\compressed\a6f3u80yu9.gz
