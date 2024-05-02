@@ -2,6 +2,7 @@
 A Project szerver és kliens alkalmazásból áll, C# nyelven fejlesztve, a .NET 8.0 környezetre célozva.
 A projekt MariaDB adatbázist használ XAMPP-on keresztül az adatkezelésre, egy feladatkezelő rendszerre fókuszálva.
 A rendszer lehetővé teszi a projektek, feladatok és felhasználói szerepek, mint például menedzserek és fejlesztők kezelését.
+A harmadik beadandóhoz kapcsolódó Rolesok használata: csak John Doe tud létrehozni taskokat, bármely más menedzser a task elküldésekor üzenetet kap, hogy ez számára nem engedélyezett.
 
 **Rendszerarchitektúra**
 A rendszer két fő komponensre oszlik:
