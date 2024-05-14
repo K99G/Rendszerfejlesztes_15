@@ -28,7 +28,7 @@ namespace RedmineServer.Controllers
                                 .Include(t => t.Project)
                                 .Include(t => t.Manager)
                                 .Where(t => t.Manager.Email == email)
-                                .Where(t => DateTime.Compare(t.Deadline, DateTime.Now.AddDays(30)) < 0)
+                                .Where(t => (DateTime.Compare(t.Deadline, DateTime.Now.AddDays(30)) < 0)&&((t.Deadline>DateTime.Now)==true))
                                 .Select(t => new TaskDTO
                                 {
                                     ID = t.Id,
@@ -44,14 +44,44 @@ namespace RedmineServer.Controllers
             string responseMessage = "";
             if(!tasks.Any()) 
             {
-                responseMessage = "Önnek nincs határidős munkája";
+                responseMessage = "Önnek nincs határidős munkája.\t";
             }
             else
             {
-                responseMessage = "Önnek határidős feladatai vannak: ";
+                responseMessage = "Önnek határidős feladatai vannak:\t";
                 foreach (var task in tasks)
                 {
-                    responseMessage += "" +task.Name+ " Határidő: "+task.DateTime.ToString()+" ";
+                    responseMessage += "|" +task.Name+ "\tHatáridő: "+task.DateTime.ToString()+"|\t";
+                }
+            }
+
+            var expiredTasks = await _context.Tasks
+                                .Include(t => t.Project)
+                                .Include(t => t.Manager)
+                                .Where(t => t.Manager.Email == email)
+                                .Where(t => (t.Deadline < DateTime.Now)==true)
+                                .Select(t => new TaskDTO
+                                {
+                                    ID = t.Id,
+                                    Name = t.Name,
+                                    Description = t.Description,
+                                    ProjectId = t.Project_Id,
+                                    ProjectName = t.Project.Name,
+                                    UserId = t.Manager.Id,
+                                    ManagerName = t.Manager.Name,
+                                    DateTime = t.Deadline
+                                })
+                                .ToListAsync();
+            if (!expiredTasks.Any())
+            {
+                responseMessage += "Önnek nincs lejárt munkája.\t";
+            }
+            else
+            {
+                responseMessage += "Önnek lejárt feladatai vannak:\t";
+                foreach (var expiredTask in expiredTasks)
+                {
+                    responseMessage += "|" + expiredTask.Name + "\tHatáridő: " + expiredTask.DateTime.ToString() + "|\t";
                 }
             }
             return Ok(responseMessage);

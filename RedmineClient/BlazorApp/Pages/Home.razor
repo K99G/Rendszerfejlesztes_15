@@ -313,7 +313,6 @@ else if (currentState == ComponentState.Loaded)
         var buffer = new ArraySegment<byte>(new byte[2048]);
         WebSocketReceiveResult result = await client.ReceiveAsync(buffer, CancellationToken.None);
         string receivedMessage = Encoding.UTF8.GetString(buffer.Array, 0, result.Count);
-        Console.WriteLine("Received: " + receivedMessage);
         Websocketmessage = receivedMessage;
     }
 

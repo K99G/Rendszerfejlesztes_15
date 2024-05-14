@@ -42,8 +42,7 @@
               "RelativeToolTip": "RedmineServer\\WebSocket\\Handlers\\HelloWorldHandler.cs",
               "ViewState": "AQIAAAwAAAAAAAAAAAAAABwAAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T07:12:38.473Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-14T07:12:38.473Z"
             },
             {
               "$type": "Document",
@@ -53,7 +52,7 @@
               "RelativeDocumentMoniker": "RedmineServer\\Controllers\\TasksController.cs",
               "ToolTip": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineServer\\RedmineServer\\Controllers\\TasksController.cs",
               "RelativeToolTip": "RedmineServer\\Controllers\\TasksController.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAcwDUAAAAnAAAA",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAowFMAAAB1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-14T06:30:32.817Z",
               "EditorCaption": ""
@@ -68,8 +67,7 @@
               "RelativeToolTip": "RedmineServer\\Controllers\\ProjectsController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T06:30:31.741Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-14T06:30:31.741Z"
             }
           ]
         }
