@@ -6,7 +6,11 @@
 @using Microsoft.AspNetCore.Components.WebAssembly.Authentication
 @using Microsoft.JSInterop
 @using System.Net
+@using System.Text;
 @using System.Net.Http.Headers
+@using System.Net.WebSockets
+@using System.IdentityModel.Tokens.Jwt
+
 
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
@@ -30,6 +34,8 @@ else if (currentState == ComponentState.Unauthorized)
 else if (currentState == ComponentState.Loaded)
 {
     <p>Data loaded successfully!</p>
+    <p>@Websocketmessage</p>
+
     <div>
     <h2>Managers</h2>
     @if (managers == null || managers.Length == 0)
@@ -257,6 +263,9 @@ else if (currentState == ComponentState.Loaded)
     private TaskModel[]? tasks, projectTasks, managerTasks;
     private DeveloperModel[]? developers;
     private TaskModel newTask = new TaskModel();
+    private string Websocketmessage="no message";
+    private string ?Email;
+
 
     public class Token
     {
@@ -264,56 +273,50 @@ else if (currentState == ComponentState.Loaded)
     }
 
 
+
     protected override async Task OnInitializedAsync()
     {
 
         var jwtToken = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "token");
+        var handler = new JwtSecurityTokenHandler();
+        var jsonToken = handler.ReadToken(jwtToken);
+        var decodeJwt = jsonToken as JwtSecurityToken;
+
+        foreach (var claim in decodeJwt.Claims)
+        {
+            if(claim.Type=="email")
+            {
+                Email=claim.Value;
+            }
+        }
         Http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", jwtToken);
+        
         ClearError();
-        //sawait TokenValidate();
 
         // Only proceed to load data if the user is authorized
         if (currentState != ComponentState.Unauthorized) {
+            
             await LoadData();
+            await WebSocketComm(Email);
+            
         }
     }
 
-    // Validate the current user
-    private async Task TokenValidate()
+    private async Task WebSocketComm(string email)
     {
-        // retrieve the token from user
-        var token = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "token"); // Note the key 'token' in login page
-        if (string.IsNullOrEmpty(token))
-        {
-            currentState = ComponentState.Unauthorized;
-            errorMessage = "can't access to local storage";
-            Console.WriteLine("Error: " + errorMessage);
-            return;
-        }
-        // Authorization request from server
-        Console.WriteLine(token.ToString());
-        Http.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
-        try
-        {
+        ClientWebSocket client = new ClientWebSocket();
+        await client.ConnectAsync(new Uri("ws://localhost:5300/ws"), CancellationToken.None);
+        
+        var sendBuffer = Encoding.UTF8.GetBytes(email);
+        await client.SendAsync(new ArraySegment<byte>(sendBuffer), WebSocketMessageType.Text, true, CancellationToken.None);
 
-            var response = await Http.PostAsJsonAsync("http://localhost:5300/Account/validate",token);
-            if (response.IsSuccessStatusCode)
-            {
-                secureData = await response.Content.ReadAsStringAsync();
-                currentState = ComponentState.Loaded;
-            }
-            else
-            {
-                currentState = ComponentState.Unauthorized;
-                errorMessage = response.ToString();
-            }
-        }
-        catch (Exception ex)
-        {
-            errorMessage = $"Error validating token: {ex.Message}";
-            SetError(ex);
-        }
+        var buffer = new ArraySegment<byte>(new byte[2048]);
+        WebSocketReceiveResult result = await client.ReceiveAsync(buffer, CancellationToken.None);
+        string receivedMessage = Encoding.UTF8.GetString(buffer.Array, 0, result.Count);
+        Console.WriteLine("Received: " + receivedMessage);
+        Websocketmessage = receivedMessage;
     }
+
 
     private async Task LoadData() {
         try 
@@ -405,6 +408,5 @@ else if (currentState == ComponentState.Loaded)
         errorMessage = ex.Message;
         // Log the error to the console for debugging purposes.
         Console.WriteLine("Error: " + errorMessage);
-        
     }
 }

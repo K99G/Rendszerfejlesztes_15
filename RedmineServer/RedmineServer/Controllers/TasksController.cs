@@ -20,7 +20,43 @@ namespace RedmineServer.Controllers
             _context = context;
         }
 
-        // HTTP GET method to retrieve all tasks.
+        [AllowAnonymous]
+        [HttpGet("timed")]
+        public async Task<ActionResult<IEnumerable<string>>> GetTaskByEmailTime(string email)
+        {
+            var tasks = await _context.Tasks
+                                .Include(t => t.Project)
+                                .Include(t => t.Manager)
+                                .Where(t => t.Manager.Email == email)
+                                .Where(t => DateTime.Compare(t.Deadline, DateTime.Now.AddDays(30)) < 0)
+                                .Select(t => new TaskDTO
+                                {
+                                    ID = t.Id,
+                                    Name = t.Name,
+                                    Description = t.Description,
+                                    ProjectId = t.Project_Id,
+                                    ProjectName = t.Project.Name,
+                                    UserId = t.Manager.Id,
+                                    ManagerName = t.Manager.Name,
+                                    DateTime = t.Deadline
+                                })
+                                .ToListAsync();
+            string responseMessage = "";
+            if(!tasks.Any()) 
+            {
+                responseMessage = "Önnek nincs határidős munkája";
+            }
+            else
+            {
+                responseMessage = "Önnek határidős feladatai vannak: ";
+                foreach (var task in tasks)
+                {
+                    responseMessage += "" +task.Name+ " Határidő: "+task.DateTime.ToString()+" ";
+                }
+            }
+            return Ok(responseMessage);
+        }
+        // HTTP GET method to retrieve all tasks
 
         [Authorize]
         [HttpGet]
@@ -134,6 +170,7 @@ namespace RedmineServer.Controllers
                 .ToListAsync();
             return Ok(tasks);
         }
+
         // taskot hozzáadni
         [Authorize]
         [HttpPost]

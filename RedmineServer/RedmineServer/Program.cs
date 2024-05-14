@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.HttpOverrides;
+using RedmineServer.WebSocket;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +12,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddHttpClient();
 builder.Services.AddControllers(options => 
 options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true);
+
+builder.Services.AddWebSocketManager();
+
 builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddSwaggerGen();
 builder.Services.AddResponseCompression();
 
@@ -95,6 +100,11 @@ app.UseCors("BlazorPolicy");
 // Configures the HTTP request pipeline to use authentication & authorization.
 app.UseAuthentication();
 app.UseAuthorization();
+
+var serviceScopeFactory = app.Services.GetRequiredService<IServiceScopeFactory>();//A WebSocketManager használatához szükséges
+var serviceProvider = serviceScopeFactory.CreateScope().ServiceProvider;//A WebSocketManager használatához szükséges
+app.UseWebSockets();//Websocketek használatához szükséges
+app.MapWebSocketManager("/ws", serviceProvider.GetService<HelloWorldHandler>());//A WebSocketManager-t használjuk a HelloWorldHandlerrel
 
 app.MapControllers();
 

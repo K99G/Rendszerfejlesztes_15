@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1fF7NtxfDHKJLaGUgm625POUfJjiC2QfifqWthTYzNZ12bNmDDwM333NA4Ijyszb4bKC1yrRuaImXF2bI6PNZA==",
+  "dgSpecHash": "/X25zm2sjJ/W9zK7eHzHk+SszCNzsRF6SXf2oVPX9mRYWRSBBFusp1bK7drjQBiuKQ/jUaucuxDu1J04t8RvuQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Gergely\\Documents\\GitHub\\Rendszerfejlesztes_15\\RedmineClient\\BlazorApp\\BlazorApp.csproj",
   "expectedPackageFiles": [
@@ -28,10 +28,15 @@
     "C:\\Users\\Gergely\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.1\\microsoft.extensions.logging.abstractions.8.0.1.nupkg.sha512",
     "C:\\Users\\Gergely\\.nuget\\packages\\microsoft.extensions.options\\8.0.2\\microsoft.extensions.options.8.0.2.nupkg.sha512",
     "C:\\Users\\Gergely\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "C:\\Users\\Gergely\\.nuget\\packages\\microsoft.identitymodel.abstractions\\7.5.1\\microsoft.identitymodel.abstractions.7.5.1.nupkg.sha512",
+    "C:\\Users\\Gergely\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\7.5.1\\microsoft.identitymodel.jsonwebtokens.7.5.1.nupkg.sha512",
+    "C:\\Users\\Gergely\\.nuget\\packages\\microsoft.identitymodel.logging\\7.5.1\\microsoft.identitymodel.logging.7.5.1.nupkg.sha512",
+    "C:\\Users\\Gergely\\.nuget\\packages\\microsoft.identitymodel.tokens\\7.5.1\\microsoft.identitymodel.tokens.7.5.1.nupkg.sha512",
     "C:\\Users\\Gergely\\.nuget\\packages\\microsoft.jsinterop\\8.0.4\\microsoft.jsinterop.8.0.4.nupkg.sha512",
     "C:\\Users\\Gergely\\.nuget\\packages\\microsoft.jsinterop.webassembly\\8.0.3\\microsoft.jsinterop.webassembly.8.0.3.nupkg.sha512",
     "C:\\Users\\Gergely\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.4\\microsoft.net.illink.tasks.8.0.4.nupkg.sha512",
     "C:\\Users\\Gergely\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\8.0.4\\microsoft.net.sdk.webassembly.pack.8.0.4.nupkg.sha512",
+    "C:\\Users\\Gergely\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.5.1\\system.identitymodel.tokens.jwt.7.5.1.nupkg.sha512",
     "C:\\Users\\Gergely\\.nuget\\packages\\system.io.pipelines\\8.0.0\\system.io.pipelines.8.0.0.nupkg.sha512",
     "C:\\Users\\Gergely\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
     "C:\\Users\\Gergely\\.nuget\\packages\\system.text.json\\8.0.0\\system.text.json.8.0.0.nupkg.sha512",
