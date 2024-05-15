@@ -23,8 +23,6 @@ public class ApplicationDbContext : DbContext
             .WithMany()
             .HasForeignKey(p => p.Type_Id);
 
-   
-  
         // Many-to-many relationship between projects and developers
         modelBuilder.Entity<Project_Developers>()
             .HasKey(pd => new { pd.Project_Id, pd.Developer_Id });

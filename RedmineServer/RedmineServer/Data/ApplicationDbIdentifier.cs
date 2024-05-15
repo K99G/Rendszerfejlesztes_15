@@ -1,3 +1,4 @@
+
 using Microsoft.AspNetCore.Components.Authorization;
 
 public class Manager
@@ -59,9 +60,8 @@ public class Task
     public int User_Id { get; set; } // Foreign key for Manager
     public Manager Manager { get; set; } // Navigation property to Manager
     public DateTime Deadline { get; set; }
-
     internal static async Task<AuthenticationState> FromResult(AuthenticationState authenticationState)
     {
         throw new NotImplementedException();
     }
-}
+} 
