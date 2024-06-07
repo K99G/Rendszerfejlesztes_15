@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedmineServer", "RedmineServer\RedmineServer.csproj", "{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedmineServer", "RedmineServer\RedmineServer.csproj", "{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RedmineClient", "RedmineClient", "{6364288C-7F14-4EF7-A78B-EAFA0BEEB32F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorClient", "RedmineClient\BlazorClient\BlazorClient.csproj", "{C64BCEB1-7988-4A72-821E-81D9314AED2B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorApp", "..\RedmineClient\BlazorApp\BlazorApp.csproj", "{5FD5EB8E-037A-4DF6-B88D-E251484F1A4A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +21,20 @@ Global
 		{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34A6F856-5FED-4498-8A81-E9F2CEA90F9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C64BCEB1-7988-4A72-821E-81D9314AED2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C64BCEB1-7988-4A72-821E-81D9314AED2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C64BCEB1-7988-4A72-821E-81D9314AED2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C64BCEB1-7988-4A72-821E-81D9314AED2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FD5EB8E-037A-4DF6-B88D-E251484F1A4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FD5EB8E-037A-4DF6-B88D-E251484F1A4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FD5EB8E-037A-4DF6-B88D-E251484F1A4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FD5EB8E-037A-4DF6-B88D-E251484F1A4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C64BCEB1-7988-4A72-821E-81D9314AED2B} = {6364288C-7F14-4EF7-A78B-EAFA0BEEB32F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {835AD22C-600C-425C-A35D-F3077ADB8FC3}

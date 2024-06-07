@@ -1,0 +1,411 @@
+﻿@page "/home"
+
+@using BlazorApp.Models
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@using Microsoft.JSInterop
+@using System.Net
+@using System.Text;
+@using System.Net.Http.Headers
+@using System.Net.WebSockets
+@using System.IdentityModel.Tokens.Jwt
+
+
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
+
+<PageTitle>Home</PageTitle>
+
+@if(currentState == ComponentState.Loading)
+{
+    <p><em>Loading data, please wait...</em></p>
+}
+else if(currentState == ComponentState.Error)
+{
+    <p><em>@errorMessage</em></p>
+}
+
+else if (currentState == ComponentState.Unauthorized)
+{
+    <p>You do not have permission to view this data.</p>
+}
+else if (currentState == ComponentState.Loaded)
+{
+    <p>Data loaded successfully!</p>
+    <p>@Websocketmessage</p>
+
+    <div>
+    <h2>Managers</h2>
+    @if (managers == null || managers.Length == 0)
+    {
+        <p>No managers found.</p>
+    }
+    else
+    {
+        <ul>
+            @foreach (var manager in managers)
+            {
+                <li>@manager.Name (@manager.Email)</li>
+            }
+        </ul>
+    }
+    </div>
+
+    <div>
+            <h2>Projects</h2>
+            @if (projects == null || projects.Length == 0)
+            {
+                <p>No projects found.</p>
+            }
+            else
+            {
+                <ul>
+                    @foreach (var project in projects)
+                    {
+                        <li>@project.Name - Description: @project.Description</li>
+                    }
+                </ul>
+            }
+    </div>
+    <div>
+        <h2>Tasks</h2>
+            @if (tasks != null && tasks.Length > 0)
+            {
+             <ul>
+                @foreach (var task in tasks)
+                    {
+                        <li>@task.Name - Manager: @task.ManagerName, Project: @task.ProjectName, Deadline: @task.DateTime.ToString("yyyy-MM-dd")</li>
+                    }
+            </ul>
+            }
+            else
+            {
+                <p>No tasks found.</p>
+            }
+    </div>
+    <div>
+        <h3>Task Search</h3>
+        <input @bind="taskId" type="number" placeholder="Enter Task ID..."  />
+        <button @onclick="SearchTask">Search</button>
+        @if(tasks != null && taskId != 0)
+        {
+            <h2>Task</h2>
+            <ul>
+            @foreach (var task in tasks)
+            {
+                <li>@task.Name</li>
+                <li>Description: @task.Description</li>
+                <li>Project: @task.ProjectName</li>
+                <li>Manager: @task.ManagerName</li>
+                <li>Deadline: @task.DateTime</li>
+            }
+            </ul>
+        }
+    </div> 
+    <div>
+        <h3>Manager Search</h3>
+            <input @bind="managerId" type="number" placeholder="Enter Manager ID..." />
+            <button @onclick="SearchManager">Search</button>
+            @if(managers != null && managerId != 0)
+            {
+                <h2>Manager</h2>
+                <ul>
+                    @foreach (var manager in managers)
+                    {
+                        <li>@manager.Name (@manager.Email)</li>
+                    }
+                </ul>
+            }
+    </div> 
+    <div>  
+        <h3>Project Search</h3>
+        <input @bind="projectId" type="number" placeholder="Enter Project ID..." />
+        <button @onclick="SearchProject">Search</button>
+        @if(projects != null && projectId != 0)
+        {
+            <h2>Projects</h2>
+            <ul>
+                @foreach (var project in projects)
+                {
+                    <li>@project.Name</li>
+                    <li>Description: @project.Description</li>
+                    <li>Type: @project.TypeName</li>
+                }
+            </ul>
+            }
+    </div> 
+    <div>
+        <h3>Search Tasks by Project ID</h3>
+        <input @bind="projectId" type="number" placeholder="Enter Project ID..." />
+        <button @onclick="SearchTasksByProjectId">Search</button>
+        @if(projectTasks != null && projectId != 0)
+        {
+            <h2>Tasks for Project @projectId</h2>
+            <ul>
+                 @foreach (var task in projectTasks)
+                {
+                    <li>@task.Name</li>
+                    <li>Description: @task.Description</li>
+                    <li>Deadline: @task.DateTime</li>
+                }
+            </ul>
+        }
+    </div> 
+    <div>
+        <h3>Search Tasks by Manager ID</h3>
+        <input @bind="managerId" type="number" placeholder="Enter Manager ID..." />
+        <button @onclick="SearchTasksByManagerId">Search</button>
+        @if(managerTasks != null && managerId != 0)
+        {
+            <h2>Tasks for Manager @managerId</h2>
+            <ul>
+                @foreach (var task in managerTasks)
+                {
+                    <li>@task.Name</li>
+                    <li>Description: @task.Description</li>
+                    <li>Deadline: @task.DateTime</li>
+                }
+            </ul>
+        }
+    </div>
+    <div>
+    
+        <div>
+            <h3>Add task</h3>
+        <label for="manager">Manager:</label>
+        <select @bind="newTask.UserId" id="manager">
+        <option value="">-- Select a Manager --</option>
+         @if (managers != null)
+        {
+            @for (int i = 0; i < managers.Length; i++)
+            {
+                        var optionvalue = i + 1;
+                        <option value="@optionvalue">@managers[i].Name (@managers[i].Email)</option>
+            }
+        }
+        else
+        {
+             <p>Please load managers before proceeding.</p>
+        }
+        </select>
+        </div>
+        <div>
+        <label for="project">Project:</label>
+        <select @bind="newTask.ProjectId" id="project">
+            <option value="">-- Select a Project --</option>
+            @if (projects != null && projects.Length > 0)
+            {
+                @foreach (var project in projects)
+                {
+                    <option value="@project.ID">@project.Name</option>
+                }
+            }
+            else
+            {
+                <p>Please load projects before proceeding.</p>
+            }
+        </select>
+        </div>
+        <div>
+            <label for="taskName">Task Name:</label>
+            <input id="taskName" @bind="newTask.Name" />
+        </div>
+        <div>
+            <label for="description">Description:</label>
+            <textarea id="description" @bind="newTask.Description"></textarea>
+        </div>
+        <div>
+            <label for="developer">Developer:</label>
+            <select id="developer" @bind="newTask.Developer">
+                <option value="">-- Select a Developer --</option>
+                @if (developers != null && developers.Length > 0)
+                {
+                    @foreach (var dev in developers)
+                    {
+                        <option value="@dev.Name">@dev.Name</option>
+                    }
+                }
+            </select>
+        </div>
+        <button type="button" @onclick="HandleValidSubmit">Submit Task</button>
+    </div>
+
+    @if (!string.IsNullOrEmpty(message))
+    {
+        <div class="alert @(message.StartsWith("Task created successfully") ? "alert-success" : "alert-danger")">
+            @message
+        </div>
+    }
+}
+
+@code {
+
+
+    public enum ComponentState
+    {
+        Loading,
+        Loaded,
+        Error,
+        Unauthorized
+    }
+
+    private string? token;
+    private string? secureData;
+    private string? errorMessage;
+    private string? message;
+    private ComponentState currentState = ComponentState.Loading;
+
+    private int taskId, managerId, projectId;
+    private ManagerModel[]? managers;
+    private ProjectModel[]? projects;
+    private TaskModel[]? tasks, projectTasks, managerTasks;
+    private DeveloperModel[]? developers;
+    private TaskModel newTask = new TaskModel();
+    private string Websocketmessage="no message";
+    private string ?Email;
+
+
+    public class Token
+    {
+        public string token { get; set; }
+    }
+
+
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        var jwtToken = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "token");
+        var handler = new JwtSecurityTokenHandler();
+        var jsonToken = handler.ReadToken(jwtToken);
+        var decodeJwt = jsonToken as JwtSecurityToken;
+
+        foreach (var claim in decodeJwt.Claims)
+        {
+            if(claim.Type=="email")
+            {
+                Email=claim.Value;
+            }
+        }
+        Http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", jwtToken);
+        
+        ClearError();
+
+        // Only proceed to load data if the user is authorized
+        if (currentState != ComponentState.Unauthorized) {
+            
+            await LoadData();
+            await WebSocketComm(Email);
+            
+        }
+    }
+
+    private async Task WebSocketComm(string email)
+    {
+        ClientWebSocket client = new ClientWebSocket();
+        await client.ConnectAsync(new Uri("ws://localhost:5300/ws"), CancellationToken.None);
+        
+        var sendBuffer = Encoding.UTF8.GetBytes(email);
+        await client.SendAsync(new ArraySegment<byte>(sendBuffer), WebSocketMessageType.Text, true, CancellationToken.None);
+
+        var buffer = new ArraySegment<byte>(new byte[2048]);
+        WebSocketReceiveResult result = await client.ReceiveAsync(buffer, CancellationToken.None);
+        string receivedMessage = Encoding.UTF8.GetString(buffer.Array, 0, result.Count);
+        Websocketmessage = receivedMessage;
+    }
+
+
+    private async Task LoadData() {
+        try 
+        {
+            managers = await Http.GetFromJsonAsync<ManagerModel[]>("api/Managers");
+            projects = await Http.GetFromJsonAsync<ProjectModel[]>("api/Projects");
+            tasks = await Http.GetFromJsonAsync<TaskModel[]>("api/Tasks");
+            developers = await Http.GetFromJsonAsync<DeveloperModel[]>("api/Developers");
+            currentState = ComponentState.Loaded; // Set state to Loaded on success
+        } catch (Exception ex) {
+            errorMessage = $"Error fetching data: {ex.Message}";
+            SetError(ex);
+        }
+    }
+    // Submit tasks to API
+    private async Task HandleValidSubmit()
+    {
+        var response = await Http.PostAsJsonAsync("api/Tasks", newTask);
+        try
+        {
+            if (response.IsSuccessStatusCode)
+            {
+                var createdTask = await response.Content.ReadFromJsonAsync<TaskModel>();
+                if (createdTask != null)
+                {
+                    message = "Task created successfully!: " + createdTask;
+                    newTask = new TaskModel(); // For another task
+                }
+            }           
+            else if((int)response.StatusCode==505)
+            {
+                message = "You do not have permission to create tasks.";
+            }
+            else 
+            {
+                message = "Task created but the response was not understood.";
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = "Failed to create task.";
+            SetError(ex);
+        }
+    }
+    // Fetch data from APIs By Id
+    private async Task SearchTask()
+    {
+        ClearError();
+        try { tasks = await Http.GetFromJsonAsync<TaskModel[]>($"api/Tasks/{taskId}"); }
+        catch (Exception ex) { errorMessage = $"Error searching for task by ID: {ex.Message}"; SetError(ex); }
+    }
+    private async Task SearchManager()
+    {
+        ClearError();
+        try { managers = await Http.GetFromJsonAsync<ManagerModel[]>($"api/Managers/{managerId}"); }
+        catch (Exception ex) { errorMessage = $"Error searching for manager by ID: {ex.Message}"; SetError(ex); }
+    }
+    private async Task SearchProject()
+    {
+        ClearError();
+        try { projects = await Http.GetFromJsonAsync<ProjectModel[]>($"api/Projects/{projectId}"); }
+        catch (Exception ex) { errorMessage = $"Error searching for project by ID: {ex.Message}"; SetError(ex); }
+    }
+
+    // Search tasks by projectID
+    private async Task SearchTasksByProjectId()
+    {
+        ClearError();
+        try { projectTasks = await Http.GetFromJsonAsync<TaskModel[]>($"api/Tasks/project/{projectId}"); }
+        catch (Exception ex) { errorMessage = $"Error searching for tasks by project ID: {ex.Message}"; SetError(ex); }
+    }
+    // Search tasks by managerID
+    private async Task SearchTasksByManagerId()
+    {
+        ClearError();
+        try { managerTasks = await Http.GetFromJsonAsync<TaskModel[]>($"api/Tasks/manager/{managerId}"); }
+        catch (Exception ex) { errorMessage = $"Error searching for tasks by manager ID: {ex.Message}"; SetError(ex); }
+    }
+
+    // Cleaner
+    private void ClearError()
+    {
+      errorMessage = null; currentState = ComponentState.Loaded; 
+    }
+    private void SetError(Exception ex) 
+    {
+        // Update the component state and message of error.
+        currentState = ComponentState.Error;
+        errorMessage = ex.Message;
+        // Log the error to the console for debugging purposes.
+        Console.WriteLine("Error: " + errorMessage);
+    }
+}

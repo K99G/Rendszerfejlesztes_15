@@ -1,0 +1,12 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "dotnet",
+			"task": "watch BlazorClient",
+			"file": "D:\\gitHub_repos\\Rendszerfejlesztes_15\\RedmineClient\\BlazorClient\\BlazorClient.csproj",
+			"problemMatcher": [],
+			"label": "dotnet: watch BlazorClient"
+		}
+	]
+}
